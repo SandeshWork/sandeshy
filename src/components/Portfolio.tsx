@@ -5,17 +5,17 @@ export function Portfolio() {
   const videos = [
     {
       title: "Brand Campaign 2024",
-      videoId: "dQw4w9WgXcQ",
+      videoId: "Z6WFokjX64U",
       description: "Successful brand awareness campaign reaching 2M+ views",
     },
     {
       title: "Product Launch Strategy",
-      videoId: "9bZkp7q19f0",
+      videoId: "4xoboqmjlQE",
       description: "Complete product launch digital strategy breakdown",
     },
     {
       title: "Social Media Success",
-      videoId: "jNQXAC9IVRw",
+      videoId: "8CUo54hBRU4",
       description: "How we grew social media presence by 500%",
     },
   ];
@@ -29,19 +29,19 @@ export function Portfolio() {
 
   const pdfs = [
     {
-      title: "Marketing Strategy Guide",
-      description: "Comprehensive digital marketing strategy framework",
-      pages: "24 pages",
+      title: "B.Tech CSE Brochure",
+      description: "This is one of the best pieces I've created in terms of ideation and content. It took us a week to finalize it after 10–15 drafts.",
+      url: "https://drive.google.com/file/d/1IX6ex8j7WIURvM0nkEt5lHVQ8bwA-06U/view",
     },
     {
-      title: "SEO Best Practices",
-      description: "Complete SEO optimization checklist and guide",
-      pages: "18 pages",
+      title: "BBA Brochure",
+      description: "A cleaner and more settled approach to match the legacy of the institute.",
+      url: "https://drive.google.com/file/d/1j1ucb9rjjwQRK9kAF1hbnNjocP1S6VwL/view",
     },
     {
-      title: "Social Media Toolkit",
-      description: "Tools and templates for social media success",
-      pages: "32 pages",
+      title: "AI Engineering",
+      description: "A new and modern approach with a minimal design style for an AI-based program.",
+      url: "https://drive.google.com/file/d/1X2QyxiEdcpIU-VODod4-j0y_DeA4mHWv/view",
     },
   ];
 
@@ -66,10 +66,19 @@ export function Portfolio() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-3xl text-[#070d0e] mb-8"
+            className="text-3xl text-[#070d0e] mb-4"
           >
-            Featured Videos
+            Video Production and Editing
           </motion.h3>
+          <motion.p
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-gray-600 mb-8 max-w-3xl"
+          >
+            These videos were conceptualized and scripted by me, and they showcase just a few of the ideas my small team of two and I brought to life with minimal equipment.
+          </motion.p>
           <div className="grid md:grid-cols-3 gap-8">
             {videos.map((video, index) => (
               <motion.div
@@ -81,7 +90,7 @@ export function Portfolio() {
                 whileHover={{ y: -10 }}
                 className="group"
               >
-                <div className="relative rounded-2xl overflow-hidden shadow-lg mb-4">
+                <div className="relative rounded-2xl overflow-hidden shadow-lg">
                   <iframe
                     className="w-full aspect-video"
                     src={`https://www.youtube.com/embed/${video.videoId}`}
@@ -97,8 +106,6 @@ export function Portfolio() {
                     <Play className="w-12 h-12 sm:w-16 sm:h-16 text-white" />
                   </motion.div>
                 </div>
-                <h4 className="text-lg sm:text-xl text-[#070d0e] mb-2">{video.title}</h4>
-                <p className="text-sm sm:text-base text-gray-600">{video.description}</p>
               </motion.div>
             ))}
           </div>
@@ -152,7 +159,7 @@ export function Portfolio() {
             viewport={{ once: true }}
             className="text-3xl text-[#070d0e] mb-8"
           >
-            Downloadable Resources
+            Brochures Designed
           </motion.h3>
           <div className="grid md:grid-cols-3 gap-8">
             {pdfs.map((pdf, index) => (
@@ -163,23 +170,40 @@ export function Portfolio() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
-                className="bg-gradient-to-br from-[#e7f2f4] to-white p-6 rounded-2xl shadow-lg border border-[#45818e]/20"
+                className="bg-gradient-to-br from-[#e7f2f4] to-white rounded-2xl shadow-lg border border-[#45818e]/20 overflow-hidden"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#45818e] to-[#69a3ae] rounded-xl flex items-center justify-center mb-4">
-                  <Download className="w-8 h-8 text-white" />
+                {/* PDF Preview Image */}
+                <div className="relative w-full h-48 bg-gradient-to-br from-[#45818e] to-[#69a3ae] flex items-center justify-center">
+                  <div className="absolute inset-0 opacity-30">
+                    <img 
+                      src="https://images.unsplash.com/photo-1611079830811-865ff4428d17?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2N1bWVudCUyMHJlcG9ydCUyMGJ1c2luZXNzfGVufDF8fHx8MTc2NjI0MTM2NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                      alt="Document preview"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="relative text-center text-white">
+                    <Download className="w-16 h-16 mx-auto mb-2 opacity-80" />
+                    <p className="text-sm opacity-90">PDF Document</p>
+                  </div>
                 </div>
-                <h4 className="text-xl text-[#070d0e] mb-2">{pdf.title}</h4>
-                <p className="text-gray-600 mb-4">{pdf.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-[#45818e]">{pdf.pages}</span>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-4 py-2 bg-gradient-to-r from-[#45818e] to-[#69a3ae] text-white rounded-lg flex items-center gap-2"
-                  >
-                    <Download size={16} />
-                    Download
-                  </motion.button>
+                
+                {/* PDF Content */}
+                <div className="p-6">
+                  <h4 className="text-xl text-[#070d0e] mb-2">{pdf.title}</h4>
+                  <p className="text-gray-600 mb-4">{pdf.description}</p>
+                  <div className="flex justify-end">
+                    <motion.a
+                      href={pdf.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-4 py-2 bg-gradient-to-r from-[#45818e] to-[#69a3ae] text-white rounded-lg flex items-center gap-2"
+                    >
+                      <Download size={16} />
+                      View
+                    </motion.a>
+                  </div>
                 </div>
               </motion.div>
             ))}

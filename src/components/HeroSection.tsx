@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import { useState, useEffect } from "react";
 import profileImage from "figma:asset/eae6064edda236c3bbd2ae63e26e5873ec844b11.png";
 
@@ -99,15 +99,17 @@ export function HeroSection() {
                 <ArrowRight size={20} />
               </motion.a>
 
-              <motion.a
-                href="#contact"
+              <motion.button
+                data-tally-open="ZjozO0"
+                data-tally-emoji-text="👋"
+                data-tally-emoji-animation="wave"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-[#45818e] text-white rounded-full flex items-center justify-center gap-2 hover:bg-[#45818e]/10 transition-colors text-sm sm:text-base"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-[#45818e] text-white rounded-full flex items-center justify-center gap-2 hover:bg-[#45818e]/10 transition-colors text-sm sm:text-base cursor-pointer"
               >
-                Download CV
-                <Download size={20} />
-              </motion.a>
+                Contact Me
+                <FileText size={20} />
+              </motion.button>
             </motion.div>
           </motion.div>
 

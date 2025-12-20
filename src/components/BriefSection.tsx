@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Code, Palette, TrendingUp, Zap } from "lucide-react";
+import skillsGif from "figma:asset/4dbd84589b2ad043aff7865c358f5fa1e04b3158.png";
 
 export function BriefSection() {
   const skills = [
@@ -63,45 +64,23 @@ export function BriefSection() {
           <div className="w-24 h-1 bg-gradient-to-r from-[#45818e] to-[#69a3ae] mx-auto" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center rounded-[0px] bg-[rgba(0,0,0,0)]">
           {/* Left Side - Scrolling Skills */}
-          <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden rounded-3xl bg-gradient-to-br from-[#070d0e] via-[#1a2a2e] to-[#2d4a50] p-4 sm:p-6 lg:p-8">
-            {/* Animated Skills Grid */}
-            <div className="space-y-3 sm:space-y-4">
-              {[0, 1].map((rowIndex) => (
-                <motion.div
-                  key={rowIndex}
-                  initial={{ x: rowIndex % 2 === 0 ? 0 : -100 }}
-                  animate={{
-                    x: rowIndex % 2 === 0 ? [-100, 0] : [0, -100],
-                  }}
-                  transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: "linear",
-                    repeatType: "loop",
-                  }}
-                  className="flex gap-3 sm:gap-4"
-                >
-                  {[...skills, ...skills].map((skill, index) => (
-                    <motion.div
-                      key={`${rowIndex}-${index}`}
-                      whileHover={{ scale: 1.05 }}
-                      className="min-w-[160px] sm:min-w-[200px] p-3 sm:p-4 bg-gradient-to-br from-[#2d4a50] to-[#45818e] rounded-xl border border-[#69a3ae]/30 shadow-lg"
-                    >
-                      <div className="text-white text-sm sm:text-base">{skill.name}</div>
-                      <div className="text-[#a8cdd4] text-xs sm:text-sm mt-1">
-                        {skill.category}
-                      </div>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Gradient Overlays */}
-            <div className="absolute top-0 left-0 w-20 sm:w-32 h-full bg-gradient-to-r from-[#070d0e] to-transparent pointer-events-none" />
-            <div className="absolute top-0 right-0 w-20 sm:w-32 h-full bg-gradient-to-l from-[#2d4a50] to-transparent pointer-events-none" />
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden rounded-3xl p-4 sm:p-6 lg:p-8">
+            {/* GIF Display */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="w-full h-full flex items-center justify-center"
+            >
+              <img
+                src={skillsGif}
+                alt="Skills showcase"
+                className="w-full h-full object-contain rounded-2xl"
+              />
+            </motion.div>
           </div>
 
           {/* Right Side - Description */}
@@ -113,34 +92,11 @@ export function BriefSection() {
             className="space-y-6 px-4 sm:px-0"
           >
             <h3 className="text-2xl sm:text-3xl md:text-4xl text-[#070d0e]">
-              Comprehensive Digital Marketing Expertise
+              Data-Driven Performance Marketing
             </h3>
             <p className="text-base sm:text-lg text-gray-700">
-              With years of experience in digital marketing, I specialize in
-              creating comprehensive strategies that drive growth, engage
-              audiences, and deliver measurable ROI. From SEO and content
-              marketing to paid advertising and analytics, I bring a holistic
-              approach to every project.
+              I run <strong>Google Ads</strong> and <strong>Meta Ads</strong> with a strong command of <strong>GA4, GTM, and Meta Pixel</strong> to track user actions and optimize performance. I use <strong>AI tools, Make.com, and n8n</strong> to automate reports, speed up workflows, and get clearer insights. My core strengths are <strong>data analysis, event and conversion setup, audience research, and Excel</strong>, helping me improve campaigns with <em>real numbers, not guesses</em>. I also use <strong>story-led design</strong>, basic video editing, and clear content writing to create ads that <em>communicate the right message and drive action</em>.
             </p>
-
-            {/* Highlights Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-              {highlights.map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 + index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
-                  className="p-4 bg-gradient-to-br from-[#e7f2f4] to-white rounded-xl border border-[#45818e]/20 shadow-sm"
-                >
-                  <div className="text-[#45818e] mb-2">{item.icon}</div>
-                  <div className="text-[#070d0e] mb-1 text-base sm:text-lg">{item.title}</div>
-                  <div className="text-sm text-gray-600">{item.desc}</div>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </div>

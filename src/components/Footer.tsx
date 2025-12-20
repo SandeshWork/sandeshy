@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Mail, Linkedin, Twitter, Instagram, Youtube, MapPin, Phone } from "lucide-react";
+import { Mail, Linkedin, Twitter, Instagram, Youtube, MapPin, Phone, FileText } from "lucide-react";
 
 export function Footer() {
   const socialLinks = [
@@ -131,22 +131,20 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-[#45818e] flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-[#a8cdd4] text-sm sm:text-base">hello@portfolio.com</p>
+                  <p className="text-[#a8cdd4] text-sm sm:text-base">work@sandeshy.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-[#45818e] flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-[#a8cdd4] text-sm sm:text-base">+1 (555) 123-4567</p>
+                  <p className="text-[#a8cdd4] text-sm sm:text-base">+91 97027 69181</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#45818e] flex-shrink-0 mt-1" />
                 <div>
                   <p className="text-[#a8cdd4] text-sm sm:text-base">
-                    San Francisco, CA
-                    <br />
-                    United States
+                    Navi Mumbai, India
                   </p>
                 </div>
               </div>
@@ -154,34 +152,24 @@ export function Footer() {
           </motion.div>
         </div>
 
-        {/* Newsletter */}
+        {/* Contact Form Button - Above Copyright */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="border-t border-[#45818e]/30 pt-12 mb-12"
+          className="flex justify-center mb-8"
         >
-          <div className="max-w-2xl mx-auto text-center">
-            <h4 className="text-xl sm:text-2xl mb-4">Stay Updated</h4>
-            <p className="text-[#a8cdd4] mb-6 text-sm sm:text-base">
-              Subscribe to get the latest digital marketing insights and tips
-              delivered to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 sm:px-6 py-2 sm:py-3 bg-[#2d4a50] border border-[#45818e]/30 rounded-full text-white placeholder-[#a8cdd4] focus:outline-none focus:border-[#45818e] text-sm sm:text-base"
-              />
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full hover:shadow-lg transition-shadow text-sm sm:text-base"
-              >
-                Subscribe
-              </motion.button>
-            </div>
-          </div>
+          <motion.button
+            data-tally-open="ZjozO0"
+            data-tally-emoji-text="👋"
+            data-tally-emoji-animation="wave"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 bg-gradient-to-r from-[#45818e] to-[#69a3ae] text-white rounded-full flex items-center gap-3 shadow-lg hover:shadow-xl hover:shadow-[#45818e]/50 transition-all cursor-pointer group"
+          >
+            <FileText size={24} className="group-hover:rotate-6 transition-transform" />
+            <span className="text-lg">Send a Query</span>
+          </motion.button>
         </motion.div>
 
         {/* Bottom Bar */}
@@ -189,7 +177,7 @@ export function Footer() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="border-t border-[#45818e]/30 pt-8 text-center"
+          className="pt-4 text-center"
         >
           <p className="text-[#a8cdd4] text-xs sm:text-base">
             &copy; {new Date().getFullYear()} Portfolio. All rights reserved.

@@ -47,8 +47,30 @@ export function Navbar() {
             ))}
           </div>
 
+          {/* Freelance Button */}
+          <motion.a
+            href="https://sandeshy.com/freelance"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="hidden md:block px-6 py-2 bg-gradient-to-r from-[#45818e] to-[#69a3ae] text-white rounded-full shadow-lg hover:shadow-xl transition-shadow"
+          >
+            Freelance
+          </motion.a>
+
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-3">
+            <motion.a
+              href="https://sandeshy.com/freelance"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-4 py-2 bg-gradient-to-r from-[#45818e] to-[#69a3ae] text-white rounded-full shadow-lg text-sm"
+            >
+              Freelance
+            </motion.a>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-white hover:text-[#69a3ae] transition-colors"

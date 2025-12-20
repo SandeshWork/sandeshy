@@ -1,270 +1,239 @@
+import image_e202a7571265f06d900a2686a9201e26a34ae848 from 'figma:asset/e202a7571265f06d900a2686a9201e26a34ae848.png';
 import { motion } from "motion/react";
-import { Briefcase, Award, TrendingUp, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Briefcase, Award, TrendingUp } from "lucide-react";
+import { Timeline } from "@/components/ui/timeline";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function Experience() {
-  const experiences = [
+  const data = [
     {
-      year: "2023 - Present",
-      title: "Senior Digital Marketing Strategist",
-      company: "Digital Growth Agency",
-      companyLogo: "DGA",
-      description:
-        "Leading multi-channel marketing campaigns, managing a team of 5 specialists, and driving 200% ROI increase for major clients.",
-      achievements: [
-        "Increased client revenue by 150% YoY",
-        "Managed $2M+ in ad spend",
-        "Led successful rebranding campaigns",
-      ],
-      icon: <Award className="w-6 h-6" />,
+      title: "Oct 2023 – Oct 2025",
+      content: (
+        <div>
+          <ImageWithFallback 
+            src={image_e202a7571265f06d900a2686a9201e26a34ae848} 
+            alt="Company Logo" 
+            className="w-auto h-12 mb-6 object-contain brightness-0 invert"
+          />
+          <div className="mb-6">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-3 bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-xl">
+                <Award className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 className="text-white mb-1 text-[24px]">
+                  Head of Marketing
+                </h4>
+              </div>
+            </div>
+            <p className="mb-4 text-sm text-white text-[14px]">
+              Owned end-to-end marketing strategy, performance, and execution across <strong>multiple B2C and B2B brands</strong>.
+            </p>
+            <div className="space-y-2">
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[16px]">Led digital marketing with a <strong><u>₹5L/month media budget</u></strong> across Google, Meta, and LinkedIn</span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white ml-4">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-white/60 rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[16px]"><em>ITM B.Tech (B2C)</em>: <strong>250+ admissions</strong>, ~<strong><u>₹87L revenue</u></strong></span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white ml-4">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-white/60 rounded-[86px] mt-1.5 flex-shrink-0" />
+                <span className="text-[16px]"><em>LISA AI (B2B SaaS)</em>: <strong>1,000+ qualified enterprise leads</strong></span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white ml-4">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-white/60 rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[16px]"><em>LetsUpgrade</em>: <strong><u>1,000,000+ users acquired</u></strong></span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white ml-4">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-white/60 rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[16px]"><em>12thClass.com</em>: <strong>15,000+ student onboardings</strong></span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[16px]">Built and managed a <strong>7-member in-house marketing team</strong> (design, video, performance)</span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[15px]" className="text-[16px]">Set up <strong>GA4, GTM, Meta Pixel, and Meritto CRM</strong> for end-to-end tracking and attribution</span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[16px]">Created <strong>automated daily performance reports</strong> to guide faster optimization decisions</span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[16px]">Led overall <strong>creative direction</strong> for ads, landing pages, video campaigns, and brand assets</span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[16px]">Scaled video production for ITM Universities to <strong>50+ approved videos per month</strong></span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[16px]">Designed <strong>conversion-focused funnels</strong> and automation journeys across WhatsApp and email</span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[16px]">Managed <strong>offline marketing execution</strong> including brochures, print materials, vendors, and budgets</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      year: "2021 - 2023",
-      title: "Digital Marketing Manager",
-      company: "Tech Startup Inc.",
-      companyLogo: "TSI",
-      description:
-        "Developed and executed comprehensive digital strategies, focusing on SEO, content marketing, and social media growth.",
-      achievements: [
-        "Grew organic traffic by 300%",
-        "Built social media presence from 0 to 50K",
-        "Launched successful email campaigns",
-      ],
-      icon: <TrendingUp className="w-6 h-6" />,
+      title: "Jan 2023 – Sep 2023",
+      content: (
+        <div>
+          <ImageWithFallback 
+            src={image_e202a7571265f06d900a2686a9201e26a34ae848} 
+            alt="Company Logo" 
+            className="w-auto h-12 mb-6 object-contain brightness-0 invert"
+          />
+          <div className="mb-6">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-3 bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-xl">
+                <TrendingUp className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 className="text-white mb-1 text-[24px]">
+                  Assistant Manager – Digital Marketing
+                </h4>
+              </div>
+            </div>
+            <p className="mb-4 text-sm text-white text-[16px]">
+              Transitioned from operations into <strong>performance ownership</strong> and campaign optimization.
+            </p>
+            <div className="space-y-2">
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[16px]">Took ownership of <strong>paid campaigns and CRM automation</strong> for free and paid skilling programs</span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[16px]">Reduced cost per lead by <strong><u>47%</u></strong> through audience testing, copy optimization, and funnel tweaks</span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[15px]" className="text-[16px]">Strengthened <strong>lead quality</strong> by aligning ads, landing pages, and CRM journeys</span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[15px]" className="text-[16px]">Grew Instagram by <strong>13,500+ followers</strong> using content and performance-led distribution</span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[15px]" className="text-[16px]">Played a key role in launching <em>ITM B.Tech</em>, delivering the <strong><u>lowest CPL</u></strong> across verticals</span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[16px]">Worked closely with design and video teams to improve <strong>creative effectiveness</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      year: "2019 - 2021",
-      title: "Marketing Specialist",
-      company: "Creative Solutions Ltd.",
-      companyLogo: "CSL",
-      description:
-        "Managed PPC campaigns, created engaging content, and analyzed marketing metrics to optimize performance.",
-      achievements: [
-        "Reduced CPA by 40%",
-        "Created 100+ high-performing content pieces",
-        "Implemented marketing automation",
-      ],
-      icon: <Briefcase className="w-6 h-6" />,
-    },
-    {
-      year: "2017 - 2019",
-      title: "Junior Marketing Associate",
-      company: "Media Group Co.",
-      companyLogo: "MGC",
-      description:
-        "Assisted in campaign development, conducted market research, and supported social media management.",
-      achievements: [
-        "Contributed to 50+ campaigns",
-        "Learned industry best practices",
-        "Developed analytical skills",
-      ],
-      icon: <Briefcase className="w-6 h-6" />,
+      title: "May 2022 – Dec 2022",
+      content: (
+        <div>
+          <ImageWithFallback 
+            src={image_e202a7571265f06d900a2686a9201e26a34ae848} 
+            alt="Company Logo" 
+            className="w-auto h-12 mb-6 object-contain brightness-0 invert"
+          />
+          <div className="mb-6">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-3 bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-xl">
+                <Briefcase className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 className="text-white mb-1 text-[24px]">
+                  Special Initiatives Executive (Marketing Operations)
+                </h4>
+              </div>
+            </div>
+            <p className="mb-4 text-sm text-white text-[16px]">
+              Built the foundation for <strong>scalable growth</strong> through user operations and early marketing systems.
+            </p>
+            <div className="space-y-2">
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[15px]" className="text-[16px]">Managed <strong>large-scale free coding bootcamps</strong> and learner operations</span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[15px]" className="text-[16px]">Improved onboarding from <strong><u>6% → 10%</u></strong> and retention from <strong><u>20% → 50%</u></strong></span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[15px]" className="text-[16px]">Supported early paid marketing efforts by handling <strong>CRM workflows and campaign operations</strong></span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[16px]">Built <strong>internal reports</strong> to track acquisition, engagement, and drop-offs</span>
+              </div>
+              <div className="flex items-start gap-2 text-sm text-white">
+                <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
+                <span className="text-[16px]">Managed <strong>community communication</strong> and mass outreach channels</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
     },
   ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => prevIndex - 1);
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => prevIndex + 1);
-  };
-
-  // Reset to equivalent position for infinite loop effect
-  const resetPosition = () => {
-    if (currentIndex <= -1) {
-      setCurrentIndex(experiences.length - 1);
-    } else if (currentIndex >= experiences.length) {
-      setCurrentIndex(0);
-    }
-  };
-
-  useEffect(() => {
-    resetPosition();
-  }, [currentIndex]);
 
   return (
     <section
       id="experience"
       className="py-20 bg-gradient-to-br from-[#070d0e] via-[#1a2a2e] to-[#2d4a50] relative overflow-hidden"
     >
-      {/* Animated Background */}
-      <div className="absolute inset-0">
-        {[...Array(15)].map((_, i) => (
+      {/* Animated Background Particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-[#45818e] rounded-full"
+            className="absolute w-2 h-1 bg-[#45818e] rounded-full"
             initial={{
               x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-              y: Math.random() * 1000,
+              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
+              scale: Math.random() * 0.5 + 0.2,
             }}
             animate={{
-              y: [null, (Math.random() * 1000)],
-              opacity: [0, 1, 0],
+              y: [null, Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800)],
+              x: [null, Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000)],
             }}
             transition={{
-              duration: Math.random() * 5 + 5,
+              duration: Math.random() * 10 + 1,
               repeat: Infinity,
-              ease: "easeInOut",
+              repeatType: "reverse",
             }}
           />
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 bg-[rgba(0,0,0,0)]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl text-white mb-4">
+          <h2 className="text-4xl md:text-5xl text-white mb-4 text-center">
             Career Journey
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#45818e] to-[#69a3ae] mx-auto mb-3" />
-          <p className="text-[#a8cdd4] text-lg">
+          <p className="text-white text-lg text-center">
             One Company • Three Promotions • Continuous Growth
           </p>
         </motion.div>
+      </div>
 
-        {/* Horizontal Carousel with 3 visible cards */}
-        <div className="relative py-8">
-          {/* Carousel Container */}
-          <div className="overflow-visible mb-8">
-            <motion.div
-              className="flex gap-6"
-              animate={{
-                x: `calc(-${currentIndex * (typeof window !== 'undefined' && window.innerWidth < 768 ? 100 : 33.33)}% - ${currentIndex * 1.5}rem)`,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 30,
-              }}
-            >
-              {experiences.map((exp, index) => (
-                <motion.div
-                  key={index}
-                  className="flex-shrink-0 w-full md:w-[calc(33.33%-1rem)]"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{
-                    opacity: 1,
-                    scale: 1,
-                  }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  {/* Card */}
-                  <motion.div
-                    whileHover={{ scale: 1.03, y: -5 }}
-                    className="relative bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-[#45818e]/20 h-full"
-                  >
-                    {/* Gradient Corner Decoration */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#45818e]/10 to-transparent rounded-bl-full" />
-
-                    <div className="p-6 sm:p-8">
-                      {/* Icon & Year */}
-                      <div className="flex items-center justify-between mb-6">
-                        <motion.div
-                          whileHover={{ rotate: 360 }}
-                          transition={{ duration: 0.6 }}
-                          className="p-3 bg-gradient-to-br from-[#e7f2f4] to-[#a8cdd4] rounded-2xl text-[#45818e]"
-                        >
-                          {exp.icon}
-                        </motion.div>
-                        <div className="bg-gradient-to-r from-[#45818e] to-[#69a3ae] text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm shadow-md">
-                          {exp.year}
-                        </div>
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="text-lg sm:text-xl text-[#070d0e] mb-4 min-h-[3.5rem]">
-                        {exp.title}
-                      </h3>
-                      
-                      {/* Company Logo & Name */}
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#45818e] to-[#69a3ae] flex items-center justify-center text-white shadow-lg flex-shrink-0">
-                          <span className="text-xs">{exp.companyLogo}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-[#45818e]">
-                          <Briefcase size={16} className="sm:w-[18px] sm:h-[18px]" />
-                          <span className="text-xs sm:text-sm">{exp.company}</span>
-                        </div>
-                      </div>
-
-                      {/* Description */}
-                      <p className="text-[#2d4a50] text-sm mb-6 leading-relaxed line-clamp-3">
-                        {exp.description}
-                      </p>
-
-                      {/* Achievements */}
-                      <div className="bg-gradient-to-br from-[#e7f2f4] to-[#f5f9fa] rounded-2xl p-4 space-y-3">
-                        <div className="flex items-center gap-2 text-[#45818e] mb-3">
-                          <Award size={16} />
-                          <span className="text-sm">Key Achievements</span>
-                        </div>
-                        {exp.achievements.map((achievement, i) => (
-                          <motion.div
-                            key={i}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.1 + 0.1 * i }}
-                            className="flex items-start gap-3 group"
-                          >
-                            <div className="w-2 h-2 bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0 group-hover:scale-150 transition-transform" />
-                            <span className="text-[#2d4a50] text-sm leading-relaxed">
-                              {achievement}
-                            </span>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Navigation Controls Below Boxes */}
-          <div className="flex flex-col items-center gap-6 mt-8">
-            {/* Progress Indicators */}
-            <div className="flex justify-center gap-2">
-              {experiences.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    index === (currentIndex % experiences.length)
-                      ? 'w-8 bg-gradient-to-r from-[#45818e] to-[#69a3ae]'
-                      : 'w-2 bg-[#45818e]/30'
-                  }`}
-                />
-              ))}
-            </div>
-
-            {/* Navigation Buttons */}
-            <div className="flex justify-center gap-4">
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={handlePrev}
-                className="w-12 h-12 rounded-full bg-gradient-to-r from-[#45818e] to-[#69a3ae] text-white flex items-center justify-center shadow-xl hover:shadow-2xl transition-shadow"
-              >
-                <ChevronLeft size={24} />
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={handleNext}
-                className="w-12 h-12 rounded-full bg-gradient-to-r from-[#45818e] to-[#69a3ae] text-white flex items-center justify-center shadow-xl hover:shadow-2xl transition-shadow"
-              >
-                <ChevronRight size={24} />
-              </motion.button>
-            </div>
-          </div>
-        </div>
+      {/* Timeline Component */}
+      <div className="relative w-full overflow-clip">
+        <Timeline data={data} className="bg-[rgb(69,129,142)] text-[rgb(255,255,255)] font-bold pt-[163px] pt-[192px] pr-[0px] pb-[0px] pl-[0px] p-[0px] text-[32px]" />
       </div>
     </section>
   );

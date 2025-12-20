@@ -1,7 +1,7 @@
 
-  # Personal Portfolio Website
+  # Final Website for Sandeshy.com
 
-  This is a code bundle for Personal Portfolio Website. The original project is available at https://www.figma.com/design/1F6sEQguXUy7765nLeiZDS/Personal-Portfolio-Website.
+  This is a code bundle for Final Website for Sandeshy.com. The original project is available at https://www.figma.com/design/1F6sEQguXUy7765nLeiZDS/Final-Website-for-Sandeshy.com.
 
   ## Running the code
 

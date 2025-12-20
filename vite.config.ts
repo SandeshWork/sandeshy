@@ -18,6 +18,8 @@
         'lucide-react@0.487.0': 'lucide-react',
         'input-otp@1.4.2': 'input-otp',
         'figma:asset/eae6064edda236c3bbd2ae63e26e5873ec844b11.png': path.resolve(__dirname, './src/assets/eae6064edda236c3bbd2ae63e26e5873ec844b11.png'),
+        'figma:asset/e202a7571265f06d900a2686a9201e26a34ae848.png': path.resolve(__dirname, './src/assets/e202a7571265f06d900a2686a9201e26a34ae848.png'),
+        'figma:asset/4dbd84589b2ad043aff7865c358f5fa1e04b3158.png': path.resolve(__dirname, './src/assets/4dbd84589b2ad043aff7865c358f5fa1e04b3158.png'),
         'embla-carousel-react@8.6.0': 'embla-carousel-react',
         'cmdk@1.1.1': 'cmdk',
         'class-variance-authority@0.7.1': 'class-variance-authority',
@@ -52,7 +54,7 @@
     },
     build: {
       target: 'esnext',
-      outDir: 'dist',
+      outDir: 'build',
     },
     server: {
       port: 3000,
