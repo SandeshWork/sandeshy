@@ -1,18 +1,14 @@
 import { motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const isFreelancePage = location.pathname === "/freelance";
 
-  const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Skills", href: "#skills" },
-    { name: "Experience", href: "#experience" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
-  ];
+  const navLinks: { name: string; href: string }[] = [];
 
   return (
     <motion.nav
@@ -23,10 +19,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-white"
-          >
+          <motion.div whileHover={{ scale: 1.05 }} className="text-white">
             <span className="text-2xl">Portfolio</span>
           </motion.div>
 
@@ -47,30 +40,52 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Freelance Button */}
-          <motion.a
-            href="https://sandeshy.com/freelance"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="hidden md:block px-6 py-2 bg-gradient-to-r from-[#45818e] to-[#69a3ae] text-white rounded-full shadow-lg hover:shadow-xl transition-shadow"
-          >
-            Freelance
-          </motion.a>
+          {/* Freelance/Portfolio Button (Desktop) */}
+          {!isFreelancePage ? (
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="hidden md:block"
+            >
+              <Link
+                to="/freelance"
+                className="px-6 py-2 bg-gradient-to-r from-[#45818e] to-[#69a3ae] text-white rounded-full shadow-lg hover:shadow-xl transition-shadow inline-block"
+              >
+                Freelance
+              </Link>
+            </motion.div>
+          ) : (
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="hidden md:block"
+            >
+              <Link
+                to="/"
+                className="px-6 py-2 bg-gradient-to-r from-[#45818e] to-[#69a3ae] text-white rounded-full shadow-lg hover:shadow-xl transition-shadow inline-block"
+              >
+                Portfolio
+              </Link>
+            </motion.div>
+          )}
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-3">
-            <motion.a
-              href="https://sandeshy.com/freelance"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-4 py-2 bg-gradient-to-r from-[#45818e] to-[#69a3ae] text-white rounded-full shadow-lg text-sm"
-            >
-              Freelance
-            </motion.a>
+            {!isFreelancePage ? (
+              <Link
+                to="/freelance"
+                className="px-4 py-2 bg-gradient-to-r from-[#45818e] to-[#69a3ae] text-white rounded-full shadow-lg text-sm"
+              >
+                Freelance
+              </Link>
+            ) : (
+              <Link
+                to="/"
+                className="px-4 py-2 bg-gradient-to-r from-[#45818e] to-[#69a3ae] text-white rounded-full shadow-lg text-sm"
+              >
+                Portfolio
+              </Link>
+            )}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-white hover:text-[#69a3ae] transition-colors"
