@@ -20,7 +20,8 @@ export function Footer() {
   return (
     <footer
       id="contact"
-      className="bg-gradient-to-br from-[#070d0e] via-[#1a2a2e] to-[#2d4a50] text-white relative overflow-hidden"
+      className="bg-black text-white relative overflow-hidden"
+      style={{ backgroundColor: '#000000' }}
     >
       {/* Animated Background */}
       <div className="absolute inset-0">

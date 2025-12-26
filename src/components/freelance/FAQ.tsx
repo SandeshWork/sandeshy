@@ -47,7 +47,8 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="py-20 bg-white relative overflow-hidden"
+      className="py-20 bg-black relative overflow-hidden"
+      style={{ backgroundColor: '#000000 !important' }}
     >
       {/* Background Effect */}
       <div className="absolute inset-0">
@@ -72,22 +73,22 @@ export function FAQ() {
         ))}
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#070d0e] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-[#2d4a50]">
+          <p className="text-lg text-white">
             Everything you need to know about working with me
           </p>
         </motion.div>
 
-        <div className="space-y-4">
+        <div className="space-y-6">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
@@ -95,20 +96,22 @@ export function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white border-2 border-gray-200 rounded-xl overflow-hidden hover:border-[#45818e] transition-colors"
+              className="bg-black border-2 border-gray-700 rounded-lg overflow-hidden hover:border-[#45818e] transition-colors"
+              style={{ backgroundColor: '#000000' }}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                className="w-full min-h-[120px] px-6 py-4 flex items-center justify-between text-left hover:bg-black transition-colors"
+                style={{ backgroundColor: '#000000' }}
               >
-                <span className="text-lg font-semibold text-[#070d0e] pr-4">
+                <span className="text-xl font-semibold text-white pr-4 leading-loose">
                   {faq.question}
                 </span>
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center">
                   {openIndex === index ? (
-                    <ChevronUp size={20} className="text-[#070d0e]" />
+                    <ChevronUp size={20} className="text-white" />
                   ) : (
-                    <ChevronDown size={20} className="text-[#070d0e]" />
+                    <ChevronDown size={20} className="text-white" />
                   )}
                 </div>
               </button>
@@ -121,7 +124,7 @@ export function FAQ() {
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden"
               >
-                <div className="px-6 pb-5 text-[#2d4a50] leading-relaxed">
+                <div className="px-6 pb-5 text-white leading-relaxed">
                   {faq.answer}
                 </div>
               </motion.div>

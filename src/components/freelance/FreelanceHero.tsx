@@ -4,7 +4,8 @@ export function FreelanceHero() {
   return (
     <section
       id="hero"
-      className="min-h-screen pt-16 bg-gradient-to-br from-[#070d0e] via-[#1a2a2e] to-[#2d4a50] relative overflow-hidden"
+      className="min-h-screen pt-16 bg-black relative overflow-hidden"
+      style={{ backgroundColor: '#000000' }}
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden p-[0px]">

@@ -115,7 +115,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="py-20 bg-white relative overflow-hidden"
+      className="py-20 bg-black relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -124,10 +124,10 @@ export function Services() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#070d0e] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
             Services I Offer
           </h2>
-          <p className="text-lg text-[#2d4a50] max-w-3xl mx-auto">
+          <p className="text-lg text-black max-w-3xl mx-auto">
             Comprehensive digital marketing solutions tailored to your business goals
           </p>
         </motion.div>
@@ -135,7 +135,7 @@ export function Services() {
         {/* Carousel */}
         <div className="relative">
           {/* Carousel Items */}
-          <div className="overflow-hidden pt-4 -mt-4">
+          <div className="overflow-hidden pt-4 -mt-4" style={{ paddingBottom: '20px' }}>
             <motion.div
               className="flex gap-8"
               animate={{
@@ -155,13 +155,10 @@ export function Services() {
                 >
                   <div 
                     className="relative border-2 border-[#45818e] p-6 rounded-2xl hover:border-[#69a3ae] transition-all duration-300 flex flex-col space-y-4 text-left overflow-hidden group"
-                    style={{ backgroundColor: '#000000', height: '320px', minHeight: '320px', maxHeight: '320px' }}
+                    style={{ backgroundColor: '#000000', height: '290px', minHeight: '290px', maxHeight: '290px', paddingBottom: '20px' }}
                   >
                     {/* Decorative gradient overlay on hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-[#45818e]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    
-                    {/* Decorative corner accent */}
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-[#45818e]/5 rounded-bl-full" />
                     
                     {/* Icon */}
                     <motion.div 
@@ -178,9 +175,6 @@ export function Services() {
                     <p className="relative text-white text-sm leading-relaxed flex-grow z-10">
                       {service.description}
                     </p>
-                    
-                    {/* Bottom decorative line */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#45818e] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 </motion.div>
               ))}
@@ -188,7 +182,7 @@ export function Services() {
           </div>
 
           {/* Navigation Buttons - Minimal Style */}
-          <div className="flex justify-center gap-3 mt-20 mb-4">
+          <div className="flex justify-center gap-3 mt-28 mb-4">
             <motion.button
               onClick={prevSlide}
               whileHover={{ scale: 1.05 }}

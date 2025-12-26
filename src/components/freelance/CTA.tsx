@@ -5,7 +5,8 @@ export function CTA() {
   return (
     <section
       id="cta"
-      className="py-20 bg-gradient-to-br from-[#2d4a50] via-[#1a2a2e] to-[#070d0e] relative overflow-hidden"
+      className="py-20 bg-black relative overflow-hidden"
+      style={{ backgroundColor: '#000000' }}
     >
       {/* Animated Background */}
       <div className="absolute inset-0">
