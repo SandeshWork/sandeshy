@@ -56,7 +56,7 @@ export function Experience() {
               </div>
               <div className="flex items-start gap-2 text-sm text-white">
                 <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
-                <span className="text-[15px]" className="text-[16px]">Set up <strong>GA4, GTM, Meta Pixel, and Meritto CRM</strong> for end-to-end tracking and attribution</span>
+                <span className="text-[16px]">Set up <strong>GA4, GTM, Meta Pixel, and Meritto CRM</strong> for end-to-end tracking and attribution</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-white">
                 <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
@@ -117,15 +117,15 @@ export function Experience() {
               </div>
               <div className="flex items-start gap-2 text-sm text-white">
                 <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
-                <span className="text-[15px]" className="text-[16px]">Strengthened <strong>lead quality</strong> by aligning ads, landing pages, and CRM journeys</span>
+                <span className="text-[16px]">Strengthened <strong>lead quality</strong> by aligning ads, landing pages, and CRM journeys</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-white">
                 <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
-                <span className="text-[15px]" className="text-[16px]">Grew Instagram by <strong>13,500+ followers</strong> using content and performance-led distribution</span>
+                <span className="text-[16px]">Grew Instagram by <strong>13,500+ followers</strong> using content and performance-led distribution</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-white">
                 <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
-                <span className="text-[15px]" className="text-[16px]">Played a key role in launching <em>ITM B.Tech</em>, delivering the <strong><u>lowest CPL</u></strong> across verticals</span>
+                <span className="text-[16px]">Played a key role in launching <em>ITM B.Tech</em>, delivering the <strong><u>lowest CPL</u></strong> across verticals</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-white">
                 <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
@@ -162,15 +162,15 @@ export function Experience() {
             <div className="space-y-2">
               <div className="flex items-start gap-2 text-sm text-white">
                 <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
-                <span className="text-[15px]" className="text-[16px]">Managed <strong>large-scale free coding bootcamps</strong> and learner operations</span>
+                <span className="text-[16px]">Managed <strong>large-scale free coding bootcamps</strong> and learner operations</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-white">
                 <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
-                <span className="text-[15px]" className="text-[16px]">Improved onboarding from <strong><u>6% → 10%</u></strong> and retention from <strong><u>20% → 50%</u></strong></span>
+                <span className="text-[16px]">Improved onboarding from <strong><u>6% → 10%</u></strong> and retention from <strong><u>20% → 50%</u></strong></span>
               </div>
               <div className="flex items-start gap-2 text-sm text-white">
                 <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
-                <span className="text-[15px]" className="text-[16px]">Supported early paid marketing efforts by handling <strong>CRM workflows and campaign operations</strong></span>
+                <span className="text-[16px]">Supported early paid marketing efforts by handling <strong>CRM workflows and campaign operations</strong></span>
               </div>
               <div className="flex items-start gap-2 text-sm text-white">
                 <div className="min-w-[12px] min-h-[12px] w-[12px] h-[12px] max-w-[12px] max-h-[12px] bg-gradient-to-r from-[#45818e] to-[#69a3ae] rounded-full mt-1.5 flex-shrink-0" />
