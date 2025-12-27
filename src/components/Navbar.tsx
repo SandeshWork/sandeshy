@@ -14,13 +14,13 @@ export function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#070d0e] via-[#1a2a2e] to-[#2d4a50] backdrop-blur-lg border-b border-[#45818e]/20"
+      className="fixed top-0 left-0 right-0 z-50 bg-black backdrop-blur-lg border-b border-[#45818e]/20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <motion.div whileHover={{ scale: 1.05 }} className="text-white">
-            <span className="text-2xl">Portfolio</span>
+            <span className="text-2xl">Freelance</span>
           </motion.div>
 
           {/* Desktop Menu */}

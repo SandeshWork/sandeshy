@@ -1,5 +1,7 @@
-import { motion, useMotionValue, useTransform, PanInfo } from "motion/react";
-import { useState, useEffect, useRef } from "react";
+﻿import { motion } from "motion/react";
+import { useState, useEffect } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
 import {
   Target,
   TrendingUp,
@@ -13,15 +15,14 @@ import {
   LineChart,
   ShoppingCart,
   Zap,
-  ChevronLeft,
-  ChevronRight,
 } from "lucide-react";
 
 export function Services() {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [servicesPerPage, setServicesPerPage] = useState(4);
-  const [isDragging, setIsDragging] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [emblaRef] = useEmblaCarousel(
+    { loop: true, dragFree: true },
+    [AutoScroll({ speed: 2, stopOnInteraction: false, stopOnMouseEnter: true })]
+  );
   
   const services = [
     {
@@ -117,38 +118,6 @@ export function Services() {
     return () => window.removeEventListener('resize', updateServicesPerPage);
   }, []);
 
-  const maxIndex = Math.max(0, services.length - servicesPerPage);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
-  };
-
-  // Auto-play carousel
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isDragging) {
-        nextSlide();
-      }
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [currentIndex, isDragging, maxIndex]);
-
-  // Handle drag
-  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    setIsDragging(false);
-    const threshold = 50;
-    
-    if (info.offset.x > threshold && currentIndex > 0) {
-      prevSlide();
-    } else if (info.offset.x < -threshold && currentIndex < maxIndex) {
-      nextSlide();
-    }
-  };
-
   return (
     <section
       id="services"
@@ -172,126 +141,56 @@ export function Services() {
         </motion.div>
 
         {/* Carousel */}
-        <div className="relative" ref={containerRef}>
-          {/* Carousel Items */}
-          <div className="overflow-hidden py-4 -my-4">
-            <motion.div
-              className="flex gap-3 sm:gap-4 md:gap-6 lg:gap-8"
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.1}
-              onDragStart={() => setIsDragging(true)}
-              onDragEnd={handleDragEnd}
-              animate={{
-                x: `-${currentIndex * (100 / servicesPerPage)}%`,
-              }}
-              transition={{ 
-                type: "spring", 
-                stiffness: 300, 
-                damping: 30,
-                mass: 0.8
-              }}
-              style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
-            >
-              {services.map((service, index) => (
-                <motion.div
-                  key={index}
-                  className="flex-shrink-0"
-                  style={{ 
-                    width: servicesPerPage === 1 
-                      ? 'calc(100% - 0rem)' 
-                      : `calc((100% - ${(servicesPerPage - 1) * (servicesPerPage === 2 ? 1 : servicesPerPage === 3 ? 1.5 : 2)}rem) / ${servicesPerPage})`
-                  }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ 
-                    delay: index * 0.05,
-                    duration: 0.5,
-                    ease: "easeOut"
-                  }}
-                >
-                  <motion.div 
-                    className="relative border-2 border-[#45818e] p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl hover:border-[#69a3ae] transition-all duration-300 flex flex-col space-y-4 sm:space-y-5 text-left overflow-hidden group h-full"
-                    style={{ 
-                      backgroundColor: '#000000',
-                      minHeight: servicesPerPage === 1 ? '280px' : '290px',
-                      touchAction: 'pan-y'
-                    }}
-                    whileHover={{ 
-                      y: -8, 
-                      scale: 1.02,
-                      transition: { duration: 0.3, ease: "easeOut" }
-                    }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    {/* Decorative gradient overlay on hover */}
-                    <motion.div 
-                      className="absolute inset-0 bg-gradient-to-br from-[#45818e]/10 to-transparent opacity-0 group-hover:opacity-100"
-                      transition={{ duration: 0.3 }}
-                    />
-                    
-                    {/* Icon */}
-                    <motion.div 
-                      className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center text-white flex-shrink-0 z-10"
-                      whileHover={{ 
-                        scale: 1.15, 
-                        rotate: 5,
-                        transition: { type: "spring", stiffness: 400, damping: 10 }
-                      }}
-                    >
-                      {service.icon}
-                    </motion.div>
-                    
-                    <h3 className="relative text-lg sm:text-xl font-bold text-white flex-shrink-0 leading-snug z-10">
-                      {service.title}
-                    </h3>
-                    <p className="relative text-white text-sm sm:text-base leading-relaxed flex-grow z-10">
-                      {service.description}
-                    </p>
-                  </motion.div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Navigation Buttons - Hidden on mobile */}
-          <div className="hidden sm:flex justify-center gap-3 mt-16 sm:mt-20 md:mt-28 mb-4">
-            <motion.button
-              onClick={prevSlide}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-10 h-10 md:w-12 md:h-12 border border-[#45818e]/30 rounded-lg text-[#45818e] flex items-center justify-center hover:border-[#45818e] hover:bg-[#45818e]/10 transition-all duration-200 backdrop-blur-sm"
-              aria-label="Previous services"
-            >
-              <ChevronLeft size={20} />
-            </motion.button>
-            <motion.button
-              onClick={nextSlide}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-10 h-10 md:w-12 md:h-12 border border-[#45818e]/30 rounded-lg text-[#45818e] flex items-center justify-center hover:border-[#45818e] hover:bg-[#45818e]/10 transition-all duration-200 backdrop-blur-sm"
-              aria-label="Next services"
-            >
-              <ChevronRight size={20} />
-            </motion.button>
-          </div>
-
-          {/* Dots Indicator - Minimal Slider */}
-          <div className="flex justify-center items-center gap-2 mt-6 sm:mt-8 mb-8">
-            {Array.from({ length: maxIndex + 1 }).map((_, index) => (
-              <motion.button
+        <div className="relative overflow-hidden" ref={emblaRef}>
+          <div className="flex touch-pan-y py-4 -my-4">
+            {services.map((service, index) => (
+              <div
                 key={index}
-                onClick={() => setCurrentIndex(index)}
-                whileHover={{ scale: 1.15 }}
-                whileTap={{ scale: 0.9 }}
-                className={`h-1.5 rounded-full transition-all duration-500 ease-out ${
-                  currentIndex === index
-                    ? "bg-[#45818e] w-12 shadow-lg shadow-[#45818e]/50"
-                    : "bg-gray-300 hover:bg-gray-400 w-1.5"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
+                className="flex-shrink-0 pl-4 sm:pl-6 lg:pl-8"
+                style={{ 
+                  flex: `0 0 ${100 / servicesPerPage}%`
+                }}
+              >
+                <motion.div 
+                  className="relative border-2 border-[#45818e] p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl hover:border-[#69a3ae] transition-all duration-300 flex flex-col space-y-4 sm:space-y-5 text-left overflow-hidden group h-full"
+                  style={{ 
+                    backgroundColor: '#000000',
+                    minHeight: servicesPerPage === 1 ? '280px' : '290px',
+                    touchAction: 'pan-y'
+                  }}
+                  whileHover={{ 
+                    y: -8, 
+                    scale: 1.02,
+                    transition: { duration: 0.3, ease: "easeOut" }
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {/* Decorative gradient overlay on hover */}
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-br from-[#45818e]/10 to-transparent opacity-0 group-hover:opacity-100"
+                    transition={{ duration: 0.3 }}
+                  />
+                  
+                  {/* Icon */}
+                  <motion.div 
+                    className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center text-white flex-shrink-0 z-10"
+                    whileHover={{ 
+                      scale: 1.15, 
+                      rotate: 5,
+                      transition: { type: "spring", stiffness: 400, damping: 10 }
+                    }}
+                  >
+                    {service.icon}
+                  </motion.div>
+                  
+                  <h3 className="relative text-lg sm:text-xl font-bold text-white flex-shrink-0 leading-snug z-10">
+                    {service.title}
+                  </h3>
+                  <p className="relative text-white text-sm sm:text-base leading-relaxed flex-grow z-10">
+                    {service.description}
+                  </p>
+                </motion.div>
+              </div>
             ))}
           </div>
         </div>

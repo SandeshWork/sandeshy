@@ -47,8 +47,8 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="py-20 bg-black relative overflow-hidden"
-      style={{ backgroundColor: '#000000 !important' }}
+      className="py-20 bg-white relative overflow-hidden"
+      style={{ backgroundColor: '#ffffff' }}
     >
       {/* Background Effect */}
       <div className="absolute inset-0">
@@ -80,10 +80,10 @@ export function FAQ() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-[#a8cdd4]">
+          <p className="text-lg text-gray-600">
             Everything you need to know about working with me
           </p>
         </motion.div>

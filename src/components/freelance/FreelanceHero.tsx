@@ -73,6 +73,19 @@ export function FreelanceHero() {
                 The only mantra for a successful campaign!
               </p>
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              className="mt-8"
+            >
+              <img 
+                src="/hero.gif" 
+                alt="Animation" 
+                className="w-full max-w-[400px] rounded-lg"
+              />
+            </motion.div>
           </motion.div>
 
           {/* Right Column - Tally Form */}
