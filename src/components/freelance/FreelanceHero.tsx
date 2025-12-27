@@ -44,8 +44,7 @@ export function FreelanceHero() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-white font-bold mb-4"
-              style={{ fontSize: '18px', textDecoration: 'underline' }}
+              className="text-white font-bold mb-4 text-lg underline"
             >
               3.5+ Years of Work Experience
             </motion.p>
@@ -54,8 +53,7 @@ export function FreelanceHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="font-black mb-6 text-white leading-tight"
-              style={{ fontSize: '60px' }}
+              className="font-black mb-6 text-white leading-tight text-4xl md:text-[60px]"
             >
               Everything for your<br />
               Digital Presence!
