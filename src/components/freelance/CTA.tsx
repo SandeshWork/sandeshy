@@ -81,42 +81,34 @@ export function CTA() {
           >
             <motion.a
               href="#hero"
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 20px 40px rgba(255, 255, 255, 0.3)",
+                y: -5
+              }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 bg-white border-2 border-white text-[#070d0e] rounded-lg font-semibold hover:bg-transparent hover:text-white transition-all flex items-center gap-2 shadow-lg"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              style={{ 
+                margin: '5px 10px',
+                background: 'white',
+                width: '250px',
+                padding: '12px 24px',
+                borderRadius: '8px',
+                color: '#070d0e',
+                fontWeight: 'bold',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                cursor: 'pointer',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+              }}
             >
               Get Started NOW!
               <ArrowRight size={20} />
             </motion.a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6 }}
-            className="mt-12 pt-12 border-t border-[#45818e]/30"
-          >
-            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center text-[#a8cdd4]">
-              <a
-                href="mailto:work@sandeshy.com"
-                className="flex items-center gap-3 hover:text-[#69a3ae] transition-colors group"
-              >
-                <div className="w-12 h-12 bg-[#45818e]/20 rounded-full flex items-center justify-center group-hover:bg-[#45818e]/30 transition-colors">
-                  <Mail size={20} />
-                </div>
-                <span className="font-medium">work@sandeshy.com</span>
-              </a>
-              <a
-                href="tel:+919702769181"
-                className="flex items-center gap-3 hover:text-[#69a3ae] transition-colors group"
-              >
-                <div className="w-12 h-12 bg-[#45818e]/20 rounded-full flex items-center justify-center group-hover:bg-[#45818e]/30 transition-colors">
-                  <Phone size={20} />
-                </div>
-                <span className="font-medium">+91 97027 69181</span>
-              </a>
-            </div>
           </motion.div>
         </motion.div>
       </div>

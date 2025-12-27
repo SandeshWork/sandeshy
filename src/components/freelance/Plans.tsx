@@ -6,7 +6,7 @@ export function Plans() {
     {
       name: "Basic Plan",
       description:
-        "Perfect for small businesses or startups looking to kickstart their digital marketing efforts",
+        "Perfect for small businesses or startups looking to\nkickstart their digital marketing efforts",
       price: "₹2,500",
       period: "week",
       features: [
@@ -35,7 +35,7 @@ export function Plans() {
     {
       name: "Long-Term Plan",
       description:
-        "Tailored for established businesses seeking a holistic digital marketing solution to boost brand visibility and engagement",
+        "Tailored for businesses seeking a digital marketing solution to boost brand visibility, generate leads, sales, and engagement",
       price: "TBD",
       period: "",
       features: [
@@ -107,8 +107,13 @@ export function Plans() {
                 plan.popular
                   ? "border-2 border-[#45818e] shadow-2xl"
                   : "border border-[#45818e]/30"
-              } relative overflow-hidden flex flex-col h-full`}
-              style={{ paddingTop: '3rem' }}
+              } relative overflow-hidden`}
+              style={{ 
+                display: 'flex', 
+                flexDirection: 'column',
+                height: '100%',
+                paddingTop: '3rem'
+              }}
             >
               {plan.popular && (
                 <div className="absolute top-0 right-0 bg-gradient-to-r from-[#45818e] to-[#69a3ae] text-white px-4 py-1 text-sm font-semibold rounded-bl-lg">
@@ -120,10 +125,10 @@ export function Plans() {
                 <h3 className="text-2xl font-bold text-white mb-4 text-center">
                   {plan.name}
                 </h3>
-                <p className="text-white text-sm mb-8 min-h-[60px] text-center">
+                <p className="text-white text-sm mb-8 min-h-[60px] text-center whitespace-pre-line">
                   {plan.description}
                 </p>
-                <div className="flex items-baseline gap-2 justify-center" style={{ marginBottom: '10px' }}>
+                <div className="flex items-baseline gap-2 justify-center mb-2">
                   <span className="text-2xl font-bold text-white">
                     {plan.price}
                   </span>
@@ -133,30 +138,37 @@ export function Plans() {
                 </div>
               </div>
 
-              <div className="space-y-4 mb-8 flex-1" style={{ marginLeft: '15px' }}>
-                <p className="text-white font-semibold text-sm uppercase tracking-wide text-left">
+              <div className="mb-8" style={{ flexGrow: 1 }}>
+                <p className="text-white font-semibold text-sm uppercase tracking-wide mb-4 ml-4">
                   {plan.name} includes
                 </p>
-                {plan.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#45818e]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check size={16} className="text-[#45818e]" />
+                <div className="space-y-4 ml-4">
+                  {plan.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-[#45818e]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Check size={16} className="text-[#45818e]" />
+                      </div>
+                      <span className="text-white text-sm leading-relaxed text-left">
+                        {feature}
+                      </span>
                     </div>
-                    <span className="text-white text-sm leading-relaxed text-left">
-                      {feature}
-                    </span>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
 
               <motion.button
-                whileHover={{ scale: 1.02 }}
+                data-tally-open="ZjozO0"
+                data-tally-emoji-text="👋"
+                data-tally-emoji-animation="wave"
+                whileHover={{ 
+                  scale: 1.03,
+                  backgroundColor: '#45818e',
+                  color: '#ffffff'
+                }}
                 whileTap={{ scale: 0.98 }}
-                className={`w-full py-4 rounded-lg font-semibold transition-all flex items-center justify-center gap-2 mt-auto ${
-                  plan.popular
-                    ? "bg-[#45818e] text-white border-2 border-[#45818e] hover:bg-[#69a3ae] hover:border-[#69a3ae]"
-                    : "bg-transparent text-[#45818e] border-2 border-[#45818e] hover:bg-[#45818e] hover:text-white"
-                }`}
+                transition={{ duration: 0.2 }}
+                className="w-full py-4 rounded-lg font-semibold flex items-center justify-center gap-2 bg-white text-black border-2 border-white"
+                style={{ marginTop: 'auto' }}
               >
                 Get started
                 <ArrowRight size={20} />

@@ -153,26 +153,6 @@ export function Footer() {
           </motion.div>
         </div>
 
-        {/* Contact Form Button - Above Copyright */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex justify-center mb-8"
-        >
-          <motion.button
-            data-tally-open="ZjozO0"
-            data-tally-emoji-text="👋"
-            data-tally-emoji-animation="wave"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-gradient-to-r from-[#45818e] to-[#69a3ae] text-white rounded-full flex items-center gap-3 shadow-lg hover:shadow-xl hover:shadow-[#45818e]/50 transition-all cursor-pointer group"
-          >
-            <FileText size={24} className="group-hover:rotate-6 transition-transform" />
-            <span className="text-lg">Send a Query</span>
-          </motion.button>
-        </motion.div>
-
         {/* Bottom Bar */}
         <motion.div
           initial={{ opacity: 0 }}
