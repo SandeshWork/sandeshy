@@ -152,8 +152,8 @@ export function Services() {
   return (
     <section
       id="services"
-      className="py-12 sm:py-16 md:py-20 bg-white relative overflow-hidden"
-      style={{ backgroundColor: '#ffffff' }}
+      className="pt-20 pb-12 sm:pt-24 sm:pb-16 md:pt-32 md:pb-20 bg-white relative overflow-hidden"
+      style={{ backgroundColor: '#ffffff', paddingTop: '50px' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -212,7 +212,7 @@ export function Services() {
                   }}
                 >
                   <motion.div 
-                    className="relative border-2 border-[#45818e] p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl hover:border-[#69a3ae] transition-all duration-300 flex flex-col space-y-3 sm:space-y-4 text-left overflow-hidden group h-full"
+                    className="relative border-2 border-[#45818e] p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl hover:border-[#69a3ae] transition-all duration-300 flex flex-col space-y-4 sm:space-y-5 text-left overflow-hidden group h-full"
                     style={{ 
                       backgroundColor: '#000000',
                       minHeight: servicesPerPage === 1 ? '280px' : '290px',
@@ -246,7 +246,7 @@ export function Services() {
                     <h3 className="relative text-lg sm:text-xl font-bold text-white flex-shrink-0 leading-snug z-10">
                       {service.title}
                     </h3>
-                    <p className="relative text-gray-300 text-xs sm:text-sm leading-relaxed flex-grow z-10">
+                    <p className="relative text-white text-sm sm:text-base leading-relaxed flex-grow z-10">
                       {service.description}
                     </p>
                   </motion.div>
@@ -277,33 +277,23 @@ export function Services() {
             </motion.button>
           </div>
 
-          {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-6 sm:mt-8">
+          {/* Dots Indicator - Minimal Slider */}
+          <div className="flex justify-center items-center gap-2 mt-6 sm:mt-8 mb-8">
             {Array.from({ length: maxIndex + 1 }).map((_, index) => (
               <motion.button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                whileHover={{ scale: 1.2 }}
+                whileHover={{ scale: 1.15 }}
                 whileTap={{ scale: 0.9 }}
-                className={`h-2 rounded-full transition-all duration-300 ${
+                className={`h-1.5 rounded-full transition-all duration-500 ease-out ${
                   currentIndex === index
-                    ? "bg-[#45818e] w-8"
-                    : "bg-gray-600 hover:bg-gray-500 w-2"
+                    ? "bg-[#45818e] w-12 shadow-lg shadow-[#45818e]/50"
+                    : "bg-gray-300 hover:bg-gray-400 w-1.5"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
-
-          {/* Mobile swipe hint */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.5 }}
-            className="sm:hidden text-center text-gray-500 text-xs mt-4"
-          >
-            Swipe to see more
-          </motion.p>
         </div>
       </div>
     </section>

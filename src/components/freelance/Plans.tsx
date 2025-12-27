@@ -6,7 +6,7 @@ export function Plans() {
     {
       name: "Basic Plan",
       description:
-        "Perfect for small businesses or startups looking to\nkickstart their digital marketing efforts",
+        "Perfect for small businesses or startups looking to start their digital marketing efforts",
       price: "₹2,500",
       period: "week",
       features: [
@@ -35,7 +35,7 @@ export function Plans() {
     {
       name: "Long-Term Plan",
       description:
-        "Tailored for businesses seeking a digital marketing solution to boost brand visibility, generate leads, sales, and engagement",
+        "Perfect for businesses seeking digital solution to boost brand visibility, leads, sales, and engagement",
       price: "TBD",
       period: "",
       features: [
