@@ -1,12 +1,11 @@
 import { motion } from "motion/react";
-import { Mail, Linkedin, Twitter, Instagram, Youtube, MapPin, Phone, FileText } from "lucide-react";
+import { Mail, Linkedin, Facebook, Instagram, MapPin, Phone } from "lucide-react";
 
 export function Footer() {
   const socialLinks = [
-    { icon: <Linkedin size={24} />, href: "#", label: "LinkedIn" },
-    { icon: <Twitter size={24} />, href: "#", label: "Twitter" },
-    { icon: <Instagram size={24} />, href: "#", label: "Instagram" },
-    { icon: <Youtube size={24} />, href: "#", label: "YouTube" },
+    { icon: <Linkedin size={24} />, href: "https://www.linkedin.com/company/hook-hunters/", label: "LinkedIn" },
+    { icon: <Facebook size={24} />, href: "https://www.facebook.com/profile.php?id=61583950663010", label: "Facebook" },
+    { icon: <Instagram size={24} />, href: "https://www.instagram.com/hookhunters_/", label: "Instagram" },
   ];
 
   const quickLinks = [
@@ -14,7 +13,6 @@ export function Footer() {
     { name: "Skills", href: "#skills" },
     { name: "Experience", href: "#experience" },
     { name: "Portfolio", href: "#portfolio" },
-    { name: "Projects", href: "#projects" },
   ];
 
   return (
@@ -109,7 +107,11 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h4 className="text-lg sm:text-xl mb-4">Services</h4>
+            <h4 className="text-lg sm:text-xl mb-4">
+              <a href="#services" className="hover:text-[#69a3ae] transition-colors">
+                Services
+              </a>
+            </h4>
             <ul className="space-y-2 sm:space-y-3 text-[#a8cdd4] text-sm sm:text-base">
               <li>Digital Strategy</li>
               <li>SEO Optimization</li>
@@ -117,6 +119,7 @@ export function Footer() {
               <li>Content Marketing</li>
               <li>PPC Campaigns</li>
               <li>Analytics & Reporting</li>
+              <li>Website Design</li>
             </ul>
           </motion.div>
 

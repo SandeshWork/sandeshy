@@ -15,11 +15,29 @@ import {
   Zap,
   ChevronLeft,
   ChevronRight,
+  Monitor,
 } from "lucide-react";
 
 export function Services() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const servicesPerPage = 4;
+  const [servicesPerPage, setServicesPerPage] = useState(4);
+
+  useEffect(() => {
+    const updateServicesPerPage = () => {
+      if (window.innerWidth < 640) {
+        setServicesPerPage(1); // Mobile
+      } else if (window.innerWidth < 1024) {
+        setServicesPerPage(2); // Tablet
+      } else {
+        setServicesPerPage(4); // Desktop
+      }
+    };
+
+    updateServicesPerPage();
+    window.addEventListener('resize', updateServicesPerPage);
+    return () => window.removeEventListener('resize', updateServicesPerPage);
+  }, []);
+
   const services = [
     {
       icon: <Target size={32} />,
@@ -93,6 +111,12 @@ export function Services() {
       description:
         "Product catalog optimization, dynamic ads, and shopping campaigns for online stores.",
     },
+    {
+      icon: <Monitor size={32} />,
+      title: "Website Design",
+      description:
+        "Modern, conversion-optimized website design and development that drives results and enhances user experience.",
+    },
   ];
 
   const maxIndex = Math.max(0, services.length - servicesPerPage);
@@ -108,26 +132,27 @@ export function Services() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 3000);
+    }, 5000); // Slower auto-advance for better viewing
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [currentIndex, maxIndex]);
 
   return (
     <section
       id="services"
-      className="py-20 bg-black relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 bg-black relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             Services I Offer
           </h2>
-          <p className="text-lg text-black max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto px-4">
             Comprehensive digital marketing solutions tailored to your business goals
           </p>
         </motion.div>
@@ -135,44 +160,60 @@ export function Services() {
         {/* Carousel */}
         <div className="relative">
           {/* Carousel Items */}
-          <div className="overflow-hidden pt-4 -mt-4" style={{ paddingBottom: '20px' }}>
+          <div className="overflow-hidden pt-4 -mt-4 pb-4">
             <motion.div
-              className="flex gap-8"
+              className="flex gap-4 sm:gap-6 md:gap-8"
               animate={{
                 x: `-${currentIndex * (100 / servicesPerPage)}%`,
               }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              transition={{ 
+                type: "spring", 
+                stiffness: 200, 
+                damping: 25,
+                mass: 0.8,
+                duration: 0.6
+              }}
             >
               {services.map((service, index) => (
                 <motion.div
                   key={index}
                   className="flex-shrink-0"
-                  style={{ width: `calc((100% - ${(servicesPerPage - 1) * 1.5}rem) / ${servicesPerPage})` }}
+                  style={{ 
+                    width: servicesPerPage === 1 
+                      ? 'calc(100% - 0rem)'
+                      : servicesPerPage === 2 
+                      ? 'calc((100% - 1.5rem) / 2)'
+                      : `calc((100% - ${(servicesPerPage - 1) * 2}rem) / ${servicesPerPage})`
+                  }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -10, scale: 1.02 }}
+                  transition={{ delay: index * 0.05, duration: 0.5 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
                 >
                   <div 
-                    className="relative border-2 border-[#45818e] p-6 rounded-2xl hover:border-[#69a3ae] transition-all duration-300 flex flex-col space-y-4 text-left overflow-hidden group"
-                    style={{ backgroundColor: '#000000', height: '290px', minHeight: '290px', maxHeight: '290px', paddingBottom: '20px' }}
+                    className="relative border-2 border-[#45818e] p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl hover:border-[#69a3ae] transition-all duration-500 flex flex-col space-y-3 sm:space-y-4 text-left overflow-hidden group h-full"
+                    style={{ 
+                      backgroundColor: '#000000',
+                      minHeight: '260px',
+                      maxHeight: servicesPerPage === 1 ? 'none' : '290px'
+                    }}
                   >
                     {/* Decorative gradient overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#45818e]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#45818e]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     
                     {/* Icon */}
                     <motion.div 
-                      className="w-16 h-16 flex items-center justify-center text-white flex-shrink-0 z-10"
+                      className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center text-white flex-shrink-0 z-10"
                       whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 300 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
                       {service.icon}
                     </motion.div>
                     
-                    <h3 className="relative text-xl font-bold text-white flex-shrink-0 leading-snug z-10">
+                    <h3 className="relative text-lg sm:text-xl font-bold text-white flex-shrink-0 leading-snug z-10">
                       {service.title}
                     </h3>
-                    <p className="relative text-white text-sm leading-relaxed flex-grow z-10">
+                    <p className="relative text-gray-300 text-sm sm:text-base leading-relaxed flex-grow z-10">
                       {service.description}
                     </p>
                   </div>
@@ -181,13 +222,14 @@ export function Services() {
             </motion.div>
           </div>
 
-          {/* Navigation Buttons - Minimal Style */}
-          <div className="flex justify-center gap-3 mt-28 mb-4">
+          {/* Navigation Buttons - Hidden on mobile, visible on larger screens */}
+          <div className="hidden sm:flex justify-center gap-3 mt-16 sm:mt-20 md:mt-28 mb-4">
             <motion.button
               onClick={prevSlide}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-10 h-10 border border-[#45818e]/30 rounded-md text-[#45818e] flex items-center justify-center hover:border-[#45818e] hover:bg-[#45818e]/5 transition-all duration-200"
+              className="w-10 h-10 border border-[#45818e]/30 rounded-md text-[#45818e] flex items-center justify-center hover:border-[#45818e] hover:bg-[#45818e]/5 transition-all duration-300"
+              aria-label="Previous services"
             >
               <ChevronLeft size={20} />
             </motion.button>
@@ -195,23 +237,27 @@ export function Services() {
               onClick={nextSlide}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-10 h-10 border border-[#45818e]/30 rounded-md text-[#45818e] flex items-center justify-center hover:border-[#45818e] hover:bg-[#45818e]/5 transition-all duration-200"
+              className="w-10 h-10 border border-[#45818e]/30 rounded-md text-[#45818e] flex items-center justify-center hover:border-[#45818e] hover:bg-[#45818e]/5 transition-all duration-300"
+              aria-label="Next services"
             >
               <ChevronRight size={20} />
             </motion.button>
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-4">
+          <div className="flex justify-center gap-2 mt-6 sm:mt-4">
             {Array.from({ length: maxIndex + 1 }).map((_, index) => (
-              <button
+              <motion.button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                className={`h-2 rounded-full transition-all duration-300 ${
                   currentIndex === index
-                    ? "bg-[#070d0e] w-8"
-                    : "bg-gray-300 hover:bg-gray-400"
+                    ? "bg-[#45818e] w-8"
+                    : "bg-gray-600 w-2 hover:bg-gray-500"
                 }`}
+                aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
