@@ -80,10 +80,10 @@ export function FAQ() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-black">
+          <p className="text-lg text-[#a8cdd4]">
             Everything you need to know about working with me
           </p>
         </motion.div>
