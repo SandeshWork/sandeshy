@@ -1,6 +1,6 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Code, Palette, TrendingUp, Zap } from "lucide-react";
-import skillsGif from "figma:asset/4dbd84589b2ad043aff7865c358f5fa1e04b3158.png";
+import skillsGif from "../assets/4dbd84589b2ad043aff7865c358f5fa1e04b3158.png";
 
 export function BriefSection() {
   const skills = [

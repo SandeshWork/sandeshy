@@ -1,7 +1,7 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { ArrowRight, FileText } from "lucide-react";
 import { useState, useEffect } from "react";
-import profileImage from "figma:asset/eae6064edda236c3bbd2ae63e26e5873ec844b11.png";
+import profileImage from "../assets/eae6064edda236c3bbd2ae63e26e5873ec844b11.png";
 
 export function HeroSection() {
   const logos = [
@@ -25,7 +25,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen pt-16 bg-gradient-to-br from-[#070d0e] via-[#1a2a2e] to-[#2d4a50] relative overflow-hidden"
+      className="min-h-screen pt-16 bg-black relative overflow-hidden"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden p-[0px]">
@@ -76,7 +76,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-base sm:text-lg md:text-xl text-white max-w-xl mx-auto lg:mx-0"
+              className="text-base sm:text-lg text-white max-w-xl mx-auto lg:mx-0"
             >
               I am a Digital Marketing Specialist with 3.5+ years of experience working with EdTech and SaaS brands. I manage paid ads, analytics, tracking, CRM, and automation to grow users and revenue. I handle campaign planning, performance tracking, and creative direction, and I use data to improve results every day.
               <br /><br />

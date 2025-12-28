@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -20,7 +20,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <motion.div whileHover={{ scale: 1.05 }} className="text-white">
-            <span className="text-2xl">Freelance</span>
+            <span className="text-2xl">SandeshY</span>
           </motion.div>
 
           {/* Desktop Menu */}

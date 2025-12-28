@@ -1,4 +1,4 @@
-﻿import { motion } from "motion/react";
+﻿import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";

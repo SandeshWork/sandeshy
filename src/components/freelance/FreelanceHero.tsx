@@ -1,4 +1,5 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
+import skillsGif from "../../assets/4dbd84589b2ad043aff7865c358f5fa1e04b3158.png";
 
 export function FreelanceHero() {
   return (
@@ -79,7 +80,7 @@ export function FreelanceHero() {
               className="mt-8"
             >
               <img 
-                src="/hero.gif" 
+                src={skillsGif} 
                 alt="Animation" 
                 className="w-full max-w-[400px] rounded-lg"
               />

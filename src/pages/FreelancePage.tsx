@@ -34,7 +34,6 @@ export default function FreelancePage() {
         <FAQ />
         <CTA />
       </main>
-      <FloatingContactButton />
       <Footer />
     </div>
   );

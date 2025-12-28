@@ -1,5 +1,5 @@
-import image_e202a7571265f06d900a2686a9201e26a34ae848 from 'figma:asset/e202a7571265f06d900a2686a9201e26a34ae848.png';
-import { motion } from "motion/react";
+import image_e202a7571265f06d900a2686a9201e26a34ae848 from '../assets/e202a7571265f06d900a2686a9201e26a34ae848.png';
+import { motion } from "framer-motion";
 import { Briefcase, Award, TrendingUp } from "lucide-react";
 import { Timeline } from "@/components/ui/timeline";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -190,7 +190,7 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="py-20 bg-gradient-to-br from-[#070d0e] via-[#1a2a2e] to-[#2d4a50] relative overflow-hidden"
+      className="py-20 bg-black relative overflow-hidden"
     >
       {/* Animated Background Particles */}
       <div className="absolute inset-0 overflow-hidden">
