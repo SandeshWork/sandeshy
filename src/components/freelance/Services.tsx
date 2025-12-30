@@ -74,7 +74,7 @@ export function Services() {
         "Conversion-focused landing page copywriting and content strategy for better results.",
     },
     {
-      icon: <Mail size={32} />,
+      icon: <Mail size={32} />, 
       title: "Marketing Automation",
       description:
         "Email sequences, WhatsApp automation, and lead nurturing workflows using Zapier, Make, and Meritto.",
