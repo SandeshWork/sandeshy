@@ -1,4 +1,4 @@
-import image_430c5960ce08d40419be78ebd48afa5d8b803bd8 from 'figma:asset/430c5960ce08d40419be78ebd48afa5d8b803bd8.png';
+import image_430c5960ce08d40419be78ebd48afa5d8b803bd8 from '../assets/430c5960ce08d40419be78ebd48afa5d8b803bd8.png';
 import { motion } from 'motion/react';
 import { ExternalLink, FileText } from 'lucide-react';
 
