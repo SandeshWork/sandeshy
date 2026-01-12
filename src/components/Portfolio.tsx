@@ -22,7 +22,7 @@ const photos = [
   { 
     type: 'image', 
     src: image_430c5960ce08d40419be78ebd48afa5d8b803bd8,
-    link: 'https://drive.google.com/drive/folders/1QK1DqmMsEMdbgSgVaYUMYgtRB7s8zj_q',
+    link: 'https://drive.google.com/drive/folders/1f_GTMskf_hsuLIUnB52_e71Oj1Guq8F9?usp=sharing',
     alt: 'Hackathon Event'
   },
 ];
