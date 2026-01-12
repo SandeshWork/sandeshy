@@ -25,6 +25,8 @@ export function Footer() {
             </p>
             <motion.a
               href="mailto:work@sandeshy.com"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-block px-8 py-4 bg-yellow-400 text-gray-900 rounded-full font-semibold hover:bg-yellow-300 transition-colors"
@@ -46,6 +48,8 @@ export function Footer() {
                 <motion.a
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ y: -4, backgroundColor: '#facc15' }}
                   whileTap={{ scale: 0.9 }}
                   className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transition-colors"
