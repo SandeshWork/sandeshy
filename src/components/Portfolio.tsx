@@ -1,163 +1,207 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Download, Play } from "lucide-react";
+import image_430c5960ce08d40419be78ebd48afa5d8b803bd8 from '../assets/430c5960ce08d40419be78ebd48afa5d8b803bd8.png';
+import { motion } from 'motion/react';
+import { ExternalLink, FileText } from 'lucide-react';
+
+const videos = [
+  { id: 'dQw4w9WgXcQ', title: 'Brand Campaign 2024' },
+  { id: 'jNQXAC9IVRw', title: 'Social Media Strategy' },
+  { id: '9bZkp7q19f0', title: 'Product Launch' },
+];
+
+const photos = [
+  { 
+    type: 'instagram', 
+    username: 'letsupgrade.in',
+    url: 'https://www.instagram.com/letsupgrade.in/'
+  },
+  { 
+    type: 'instagram', 
+    username: 'hookhunters_',
+    url: 'https://www.instagram.com/hookhunters_/'
+  },
+  { 
+    type: 'image', 
+    src: image_430c5960ce08d40419be78ebd48afa5d8b803bd8,
+    link: 'https://drive.google.com/drive/folders/1QK1DqmMsEMdbgSgVaYUMYgtRB7s8zj_q',
+    alt: 'Hackathon Event'
+  },
+];
+
+const brochures = [
+  { 
+    title: 'Applied AI Engineering Brochure', 
+    pages: 16,
+    link: 'https://drive.google.com/file/d/1X2QyxiEdcpIU-VODod4-j0y_DeA4mHWv/view?usp=sharing'
+  },
+  { 
+    title: "BBA iConnect Bachelor's Program", 
+    pages: 20,
+    link: 'https://drive.google.com/file/d/1j1ucb9rjjwQRK9kAF1hbnNjocP1S6VwL/view?usp=sharing'
+  },
+  { 
+    title: 'School of FutureTech (B.Tech CSE) Brochure', 
+    pages: 20,
+    link: 'https://drive.google.com/file/d/1IX6ex8j7WIURvM0nkEt5lHVQ8bwA-06U/view?usp=sharing'
+  },
+];
 
 export function Portfolio() {
-  const videos = [
-    {
-      title: "Brand Campaign 2024",
-      videoId: "Z6WFokjX64U",
-      description: "Successful brand awareness campaign reaching 2M+ views",
-    },
-    {
-      title: "Product Launch Strategy",
-      videoId: "4xoboqmjlQE",
-      description: "Complete product launch digital strategy breakdown",
-    },
-    {
-      title: "Social Media Success",
-      videoId: "8CUo54hBRU4",
-      description: "How we grew social media presence by 500%",
-    },
-  ];
-
-  const pdfs = [
-    {
-      title: "B.Tech CSE Brochure",
-      description: "This is one of the best pieces I've created in terms of ideation and content. It took us a week to finalize it after 10–15 drafts.",    },
-    {
-      title: "BBA Brochure",
-      description: "A cleaner and more settled approach to match the legacy of the institute.",
-      url: "https://drive.google.com/file/d/1j1ucb9rjjwQRK9kAF1hbnNjocP1S6VwL/view",
-    },
-    {
-      title: "AI Engineering",
-      description: "A new and modern approach with a minimal design style for an AI-based program.",
-      url: "https://drive.google.com/file/d/1X2QyxiEdcpIU-VODod4-j0y_DeA4mHWv/view",
-    },
-  ];
-
   return (
-    <section id="portfolio" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+    <section id="portfolio" className="py-24 px-6">
+      <div className="max-w-7xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold text-gray-900 mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#070d0e] to-[#45818e] mb-4">
-            Portfolio
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#45818e] to-[#69a3ae] mx-auto" />
-        </motion.div>
-
-        {/* Video Section */}
-        <div className="mb-16">
+          Portfolio
+        </motion.h2>
+        
+        {/* YouTube Channel Section */}
+        <div className="mb-24">
           <motion.h3
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl text-[#070d0e] mb-4"
+            className="text-3xl font-bold text-gray-900 mb-8"
           >
-            Video Production and Editing
+            YouTube Channel
           </motion.h3>
-          <motion.p
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            {/* Channel Embed */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="border-2 border-gray-900 rounded-2xl overflow-hidden hover:border-yellow-400 transition-all"
+            >
+              <div className="aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/videoseries?list=PL2xv2fRx_g7PVeqUBkpraPvu22k7W_7DI"
+                  title="YouTube Channel"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </motion.div>
+
+            {/* Description */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-4"
+            >
+              <h4 className="text-2xl font-bold text-gray-900">
+                YouTube Growth & Production Manager
+              </h4>
+              <p className="text-gray-600 leading-relaxed">
+                Managed the School of FutureTech YouTube account, overseeing the production and publishing of diverse content formats including podcasts, interviews, reels, advertisements, and more. I handled end-to-end channel operations while leading and coordinating a team of video editors to ensure consistent quality, branding, and timely delivery across all content.
+              </p>
+              <motion.a
+                href="https://www.youtube.com/@schooloffuturetech"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-yellow-400 text-gray-900 font-semibold rounded-xl border-2 border-gray-900 hover:bg-yellow-500 transition-colors"
+              >
+                Visit Channel
+                <ExternalLink className="w-5 h-5" />
+              </motion.a>
+            </motion.div>
+          </div>
+        </div>
+        
+        {/* Photo Gallery */}
+        <div className="mb-24">
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-gray-600 mb-8 max-w-3xl"
+            className="text-3xl font-bold text-gray-900 mb-8"
           >
-            These videos were conceptualized and scripted by me, and they showcase just a few of the ideas my small team of two and I brought to life with minimal equipment.
-          </motion.p>
-          <div className="grid md:grid-cols-3 gap-8">
-            {videos.map((video, index) => (
+            Photo Gallery
+          </motion.h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {photos.map((photo, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
-                className="group"
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, rotate: 2 }}
+                className="border-2 border-gray-900 rounded-2xl overflow-hidden aspect-square cursor-pointer transition-all hover:border-yellow-400"
               >
-                <div className="relative rounded-2xl overflow-hidden shadow-lg">
+                {photo.type === 'instagram' ? (
                   <iframe
-                    className="w-full aspect-video"
-                    src={`https://www.youtube.com/embed/${video.videoId}`}
-                    title={video.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    src={`https://www.instagram.com/${photo.username}/embed`}
+                    title={photo.username}
+                    className="w-full h-full"
+                    style={{ border: 'none' }}
                     allowFullScreen
                   />
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    className="absolute inset-0 bg-gradient-to-t from-[#070d0e]/80 to-transparent flex items-center justify-center pointer-events-none"
-                  >
-                    <Play className="w-12 h-12 sm:w-16 sm:h-16 text-white" />
-                  </motion.div>
-                </div>
+                ) : (
+                  <a href={photo.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+                    <img
+                      src={photo.src}
+                      alt={photo.alt}
+                      className="w-full h-full object-cover"
+                    />
+                  </a>
+                )}
               </motion.div>
             ))}
           </div>
         </div>
-
-        {/* PDF Downloads */}
+        
+        {/* Brochures */}
         <div>
           <motion.h3
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl text-[#070d0e] mb-8"
+            className="text-3xl font-bold text-gray-900 mb-8"
           >
-            Brochures Designed
+            Design Brochures
           </motion.h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {pdfs.map((pdf, index) => (
-              <motion.div
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {brochures.map((brochure, index) => (
+              <motion.a
                 key={index}
+                href={brochure.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
-                className="bg-gradient-to-br from-[#e7f2f4] to-white rounded-2xl shadow-lg border border-[#45818e]/20 overflow-hidden"
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ y: -8, borderColor: '#facc15' }}
+                className="border-2 border-gray-900 rounded-2xl p-6 transition-all cursor-pointer bg-white group"
               >
-                {/* PDF Preview Image */}
-                <div className="relative w-full h-48 bg-gradient-to-br from-[#45818e] to-[#69a3ae] flex items-center justify-center">
-                  <div className="absolute inset-0 opacity-30">
-                    <img 
-                      src="https://images.unsplash.com/photo-1611079830811-865ff4428d17?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2N1bWVudCUyMHJlcG9ydCUyMGJ1c2luZXNzfGVufDF8fHx8MTc2NjI0MTM2NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                      alt="Document preview"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="relative text-center text-white">
-                    <Download className="w-16 h-16 mx-auto mb-2 opacity-80" />
-                    <p className="text-sm opacity-90">PDF Document</p>
-                  </div>
-                </div>
-                
-                {/* PDF Content */}
-                <div className="p-6">
-                  <h4 className="text-xl text-[#070d0e] mb-2">{pdf.title}</h4>
-                  <p className="text-gray-600 mb-4">{pdf.description}</p>
-                  <div className="flex justify-end">
-                    <motion.a
-                      href={pdf.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="px-4 py-2 bg-gradient-to-r from-[#45818e] to-[#69a3ae] text-white rounded-lg flex items-center gap-2"
-                    >
-                      <Download size={16} />
-                      View
-                    </motion.a>
-                  </div>
-                </div>
-              </motion.div>
+                <motion.div
+                  whileHover={{ rotate: 12 }}
+                  transition={{ duration: 0.3 }}
+                  className="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center mb-4"
+                >
+                  <FileText className="w-8 h-8 text-gray-900" />
+                </motion.div>
+                <h4 className="font-bold text-gray-900 mb-2">{brochure.title}</h4>
+                <p className="text-gray-600 text-sm mb-4">{brochure.pages} pages</p>
+                <motion.div
+                  whileHover={{ x: 4 }}
+                  className="flex items-center text-yellow-600 group-hover:text-yellow-500"
+                >
+                  <span className="text-sm font-semibold mr-1">View</span>
+                  <ExternalLink className="w-4 h-4" />
+                </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>

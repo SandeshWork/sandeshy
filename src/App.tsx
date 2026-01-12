@@ -1,39 +1,23 @@
-import { Navbar } from "./components/Navbar";
-import { HeroSection } from "./components/HeroSection";
-import { BriefSection } from "./components/BriefSection";
-import { Experience } from "./components/Experience";
-import { Portfolio } from "./components/Portfolio";
-import { Footer } from "./components/Footer";
-import { FloatingContactButton } from "./components/FloatingContactButton";
-import { useEffect } from "react";
+import { Hero } from './components/Hero';
+import { Navbar } from './components/Navbar';
+import { CareerJourney } from './components/CareerJourney';
+import { Portfolio } from './components/Portfolio';
+import { Footer } from './components/Footer';
+import { ParticlesBackground } from './components/ParticlesBackground';
+import { ToolsCarousel } from './components/ToolsCarousel';
 
 export default function App() {
-  useEffect(() => {
-    // Load Tally popup script
-    const script = document.createElement('script');
-    script.src = 'https://tally.so/widgets/embed.js';
-    script.async = true;
-    document.head.appendChild(script);
-
-    return () => {
-      // Cleanup script on unmount
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
-    };
-  }, []);
-
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <main>
-        <HeroSection />
-        <BriefSection />
-        <Experience />
+    <div className='relative min-h-screen bg-white'>
+      <ParticlesBackground />
+      <div className='relative' style={{ zIndex: 10 }}>
+        <Navbar />
+        <Hero />
+        <ToolsCarousel />
+        <CareerJourney />
         <Portfolio />
-      </main>
-      <FloatingContactButton />
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 }
