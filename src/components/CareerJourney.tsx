@@ -1,47 +1,72 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, Star } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 
 const journeySteps = [
   {
-    period: 'Oct 2023 – Oct 2025',
-    title: 'Head of Marketing | LetsUpgrade',
+    period: 'Jan 2026 – Present',
+    company: 'Mopid',
+    companyTagline: 'AI Hiring OS for High-Volume Recruiting · Bangalore',
+    title: 'Digital Marketing Executive',
+    isCurrent: true,
     achievements: [
-      'Led digital marketing with a ₹5L/month media budget across Google, Meta, and LinkedIn',
-      'ITM B.Tech (B2C): 250+ admissions, ~₹87L revenue',
-      'LISA AI (B2B SaaS): 1,000+ qualified enterprise leads',
-      'LetsUpgrade: 1,000,000+ users acquired',
-      '12thClass.com: 15,000+ student onboardings',
-      'Built and managed a 7-member in-house marketing team (design, video, performance)',
-      'Set up GA4, GTM, Meta Pixel, and Meritto CRM for end-to-end tracking and attribution',
-      'Created automated daily performance reports to guide faster optimization decisions',
-      'Led overall creative direction for ads, landing pages, video campaigns, and brand assets',
+      'Leading B2B demand generation targeting HR leaders and enterprise hiring teams via LinkedIn Ads',
+      'Built and managed end-to-end lead generation funnel including ad creatives, landing flows, and conversion tracking',
+      'Driving product demos and POC onboarding through targeted paid acquisition strategies',
+      'Created high-performing video content and ad creatives aligned with B2B SaaS and AI hiring messaging',
+      'Designed and implemented WhatsApp automation workflows for lead nurturing and qualification',
+      'Automated lead capture, routing, and CRM processes using LeadSquared (lead creation, company creation, lead transfer)',
+      'Optimised funnel performance by improving lead quality and demo conversion rates through continuous A/B testing',
+      'Writing LinkedIn thought-leadership content to establish brand positioning in AI recruitment and HR tech',
+    ],
+  },
+  {
+    period: 'Oct 2023 – Oct 2025',
+    company: 'LetsUpgrade',
+    companyTagline: 'EdTech · Navi Mumbai',
+    title: 'Head of Digital Marketing',
+    isCurrent: false,
+    achievements: [
+      'Ran monthly paid campaigns across Google Ads, Meta Ads, and LinkedIn with a significant monthly media budget',
+      'ITM B.Tech: Drove admissions generating substantial revenue in 2025 through performance-led campaigns',
+      'LISA AI: Generated qualified B2B leads for an AI-based corporate training SaaS platform',
+      'LetsUpgrade: Acquired users through a mix of paid and organic channels at scale',
+      '12thClass: Drove thousands of student registrations for a 12th class resources platform',
+      'Set up end-to-end tracking using GA4, GTM, Meritto CRM, and Meta Pixel',
+      'Built automated daily performance reports for Google Ads and Meta Ads to speed up optimisation decisions',
+      'Managed a 7-member in-house team: designers, video editors, and marketing executives',
+      'Led creative strategy for ads, landing pages, video campaigns, and brand assets',
       'Scaled video production for ITM Universities to 50+ approved videos per month',
-      'Designed conversion-focused funnels and automation journeys across WhatsApp and email',
-      'Managed offline marketing execution including brochures, print materials, vendors, and budgets',
+      'Owned end-to-end marketing budgets including media spend, tools, and team costs',
     ],
   },
   {
     period: 'Jan 2023 – Sep 2023',
-    title: 'Assistant Manager – Digital Marketing | LetsUpgrade',
+    company: 'LetsUpgrade',
+    companyTagline: 'EdTech · Navi Mumbai',
+    title: 'Assistant Manager – Digital Marketing',
+    isCurrent: false,
     achievements: [
-      'Took ownership of paid campaigns and CRM automation for free and paid skilling programs',
-      'Reduced cost per lead by 47% through audience testing, copy optimization, and funnel tweaks',
-      'Strengthened lead quality by aligning ads, landing pages, and CRM journeys',
-      'Grew Instagram by 13,500+ followers using content and performance-led distribution',
-      'Played a key role in launching ITM B.Tech, delivering the lowest CPL across verticals',
-      'Worked closely with design and video teams to improve creative effectiveness',
+      'Took full ownership of paid campaigns and CRM automation for free and paid skilling programs',
+      'Reduced cost per lead significantly through audience testing, copy optimisation, and funnel improvements',
+      'Strengthened lead quality by aligning ad targeting, landing pages, and CRM journeys end-to-end',
+      'Grew Instagram following substantially using content and performance-led distribution strategies',
+      'Played a pivotal role in launching ITM B.Tech, delivering the lowest CPL across all verticals',
+      'Collaborated closely with design and video teams to improve creative effectiveness and output',
     ],
   },
   {
     period: 'May 2022 – Dec 2022',
-    title: 'Special Initiatives Executive (Marketing Operations) | LetsUpgrade',
+    company: 'LetsUpgrade',
+    companyTagline: 'EdTech · Navi Mumbai',
+    title: 'Special Initiatives Executive',
+    isCurrent: false,
     achievements: [
-      'Managed large-scale free coding bootcamps and learner operations',
-      'Improved onboarding from 6% → 10% and retention from 20% → 50%',
+      'Managed large-scale free coding bootcamps and end-to-end learner operations',
+      'Improved onboarding and retention rates through structured CRM journeys and communication flows',
       'Supported early paid marketing efforts by handling CRM workflows and campaign operations',
-      'Built internal reports to track acquisition, engagement, and drop-offs',
-      'Managed community communication and mass outreach channels',
+      'Built internal reports to track acquisition, engagement, and drop-off points across the funnel',
+      'Managed community channels and mass outreach at scale during early growth stages',
     ],
   },
 ];
@@ -49,86 +74,154 @@ const journeySteps = [
 export function CareerJourney() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
 
-  const toggleExpand = (index: number) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
-  };
-
   return (
-    <section className="py-24 px-6 bg-gray-50/30">
-      <div className="max-w-6xl mx-auto">
+    <section
+      id="experience"
+      style={{ background: '#FAFAFA', padding: '96px 24px' }}
+    >
+      <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          style={{ marginBottom: 64 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Career Journey
-          </h2>
-          <p className="text-xl text-gray-600">
-            One Company • Three Promotions • Continuous Growth
-          </p>
-        </motion.div>
-        
-        <div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-white border-2 border-gray-900 rounded-3xl overflow-hidden transition-all hover:border-yellow-400"
+          <p
+            style={{
+              color: '#888',
+              fontSize: 12,
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              marginBottom: 16,
+            }}
           >
-            {journeySteps.map((step, index) => (
-              <div key={index}>
-                {/* Role Header - Clickable */}
+            Work Experience
+          </p>
+          <h2
+            style={{
+              fontSize: 'clamp(36px, 5.5vw, 64px)',
+              fontWeight: 900,
+              color: '#0A0A0A',
+              lineHeight: 1,
+              letterSpacing: '-0.02em',
+            }}
+          >
+            Where I've
+            <br />
+            been building.
+          </h2>
+        </motion.div>
+
+        {/* Timeline */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          {journeySteps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.07 }}
+            >
+              <div
+                style={{
+                  borderRadius: 20,
+                  overflow: 'hidden',
+                  border: step.isCurrent ? '1.5px solid #FFD60A' : '1.5px solid #E8E8E8',
+                  background: '#fff',
+                  boxShadow: step.isCurrent ? '0 4px 32px rgba(255,214,10,0.12)' : '0 2px 12px rgba(0,0,0,0.04)',
+                  transition: 'box-shadow 0.2s',
+                }}
+              >
+                {/* Header row */}
                 <button
-                  onClick={() => toggleExpand(index)}
-                  className="w-full p-8 flex items-center gap-6 text-left transition-all hover:bg-gray-50 border-b-2 border-gray-200 last:border-b-0"
+                  onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
+                  style={{
+                    width: '100%',
+                    padding: '24px 28px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 20,
+                    textAlign: 'left',
+                    background: 'none',
+                    cursor: 'pointer',
+                  }}
+                  onMouseEnter={e => ((e.currentTarget as HTMLElement).style.background = '#FAFAFA')}
+                  onMouseLeave={e => ((e.currentTarget as HTMLElement).style.background = 'transparent')}
                 >
-                  <div className="flex-shrink-0">
-                    <motion.div
-                      animate={{ rotate: expandedIndex === index ? 360 : 0 }}
-                      transition={{ duration: 0.4 }}
-                      className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                        index === 0 
-                          ? 'bg-yellow-400' 
-                          : index === 1 
-                          ? 'bg-yellow-200' 
-                          : 'bg-white border-2 border-gray-900'
-                      }`}
+                  {/* Current dot */}
+                  {step.isCurrent && (
+                    <div
+                      style={{
+                        width: 10,
+                        height: 10,
+                        borderRadius: '50%',
+                        background: '#FFD60A',
+                        flexShrink: 0,
+                        boxShadow: '0 0 0 3px rgba(255,214,10,0.2)',
+                      }}
+                    />
+                  )}
+
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    {/* Period + current badge */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6, flexWrap: 'wrap' }}>
+                      <span
+                        style={{
+                          fontSize: 12,
+                          fontWeight: 700,
+                          color: step.isCurrent ? '#b8980a' : '#999',
+                          background: step.isCurrent ? '#FFFBEA' : '#F5F5F5',
+                          padding: '3px 10px',
+                          borderRadius: 999,
+                        }}
+                      >
+                        {step.period}
+                      </span>
+                      {step.isCurrent && (
+                        <span
+                          style={{
+                            fontSize: 11,
+                            fontWeight: 700,
+                            color: '#16a34a',
+                            background: '#F0FDF4',
+                            border: '1px solid #bbf7d0',
+                            padding: '2px 8px',
+                            borderRadius: 999,
+                          }}
+                        >
+                          Current
+                        </span>
+                      )}
+                    </div>
+
+                    <h3
+                      style={{
+                        fontSize: 'clamp(17px, 2.5vw, 22px)',
+                        fontWeight: 800,
+                        color: '#0A0A0A',
+                        marginBottom: 4,
+                        letterSpacing: '-0.01em',
+                      }}
                     >
-                      <Star 
-                        className={`w-7 h-7 ${
-                          index === 0 
-                            ? 'fill-gray-900 text-gray-900' 
-                            : index === 1 
-                            ? 'fill-yellow-400 text-yellow-400' 
-                            : 'fill-none text-gray-900'
-                        }`} 
-                      />
-                    </motion.div>
-                  </div>
-                  
-                  <div className="flex-1">
-                    <p className="text-sm font-semibold text-yellow-600 mb-1">
-                      {step.period}
-                    </p>
-                    <h3 className="text-xl font-bold text-gray-900">
                       {step.title}
                     </h3>
+                    <p style={{ fontSize: 14, color: '#999' }}>
+                      {step.company} · {step.companyTagline}
+                    </p>
                   </div>
 
                   <motion.div
                     animate={{ rotate: expandedIndex === index ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex-shrink-0"
+                    transition={{ duration: 0.25 }}
+                    style={{ flexShrink: 0 }}
                   >
-                    <ChevronDown className="w-6 h-6 text-gray-900" />
+                    <ChevronDown style={{ width: 20, height: 20, color: '#BABABA' }} />
                   </motion.div>
                 </button>
 
-                {/* Expandable Content */}
+                {/* Expanded body */}
                 <AnimatePresence>
                   {expandedIndex === index && (
                     <motion.div
@@ -136,19 +229,42 @@ export function CareerJourney() {
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
+                      style={{ overflow: 'hidden' }}
                     >
-                      <div className="px-8 pb-8 bg-gray-50/30">
-                        <ul className="space-y-3 pt-6">
-                          {step.achievements.map((achievement, idx) => (
+                      <div
+                        style={{
+                          padding: '4px 28px 28px 28px',
+                          borderTop: '1px solid #F0F0F0',
+                        }}
+                      >
+                        <ul style={{ display: 'flex', flexDirection: 'column', gap: 12, paddingTop: 20 }}>
+                          {step.achievements.map((item, idx) => (
                             <motion.li
                               key={idx}
-                              initial={{ opacity: 0, x: -20 }}
+                              initial={{ opacity: 0, x: -16 }}
                               animate={{ opacity: 1, x: 0 }}
-                              transition={{ duration: 0.3, delay: idx * 0.03 }}
-                              className="flex items-start text-gray-600 leading-relaxed"
+                              transition={{ duration: 0.22, delay: idx * 0.04 }}
+                              style={{
+                                display: 'flex',
+                                alignItems: 'flex-start',
+                                gap: 12,
+                                color: '#555',
+                                fontSize: 15,
+                                lineHeight: 1.65,
+                              }}
                             >
-                              <span className="inline-block w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-3 flex-shrink-0" />
-                              <span>{achievement}</span>
+                              <span
+                                style={{
+                                  display: 'inline-block',
+                                  width: 6,
+                                  height: 6,
+                                  borderRadius: '50%',
+                                  background: '#FFD60A',
+                                  flexShrink: 0,
+                                  marginTop: 8,
+                                }}
+                              />
+                              {item}
                             </motion.li>
                           ))}
                         </ul>
@@ -157,8 +273,8 @@ export function CareerJourney() {
                   )}
                 </AnimatePresence>
               </div>
-            ))}
-          </motion.div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

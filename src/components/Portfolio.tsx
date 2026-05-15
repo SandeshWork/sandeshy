@@ -1,210 +1,344 @@
-import image_430c5960ce08d40419be78ebd48afa5d8b803bd8 from '../assets/430c5960ce08d40419be78ebd48afa5d8b803bd8.png';
 import { motion } from 'motion/react';
-import { ExternalLink, FileText } from 'lucide-react';
+import { ExternalLink, FileText, Play, Users, Video, Calendar } from 'lucide-react';
+import image_430c5960 from '../assets/430c5960ce08d40419be78ebd48afa5d8b803bd8.png';
 
-const videos = [
-  { id: 'dQw4w9WgXcQ', title: 'Brand Campaign 2024' },
-  { id: 'jNQXAC9IVRw', title: 'Social Media Strategy' },
-  { id: '9bZkp7q19f0', title: 'Product Launch' },
-];
-
-const photos = [
-  { 
-    type: 'instagram', 
-    username: 'letsupgrade.in',
-    url: 'https://www.instagram.com/letsupgrade.in/'
-  },
-  { 
-    type: 'instagram', 
-    username: 'hookhunters_',
-    url: 'https://www.instagram.com/hookhunters_/'
-  },
-  { 
-    type: 'image', 
-    src: image_430c5960ce08d40419be78ebd48afa5d8b803bd8,
-    link: 'https://drive.google.com/drive/folders/1f_GTMskf_hsuLIUnB52_e71Oj1Guq8F9?usp=sharing',
-    alt: 'Hackathon Event'
-  },
-];
+function YtIcon({ style }: { style?: React.CSSProperties }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" style={style}>
+      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+    </svg>
+  );
+}
 
 const brochures = [
-  { 
-    title: 'Applied AI Engineering Brochure', 
+  {
+    title: 'Applied AI Engineering Brochure',
     pages: 16,
-    link: 'https://drive.google.com/file/d/1X2QyxiEdcpIU-VODod4-j0y_DeA4mHWv/view?usp=sharing'
+    link: 'https://drive.google.com/file/d/1X2QyxiEdcpIU-VODod4-j0y_DeA4mHWv/view?usp=sharing',
   },
-  { 
-    title: "BBA iConnect Bachelor's Program", 
+  {
+    title: "BBA iConnect Bachelor's Program",
     pages: 20,
-    link: 'https://drive.google.com/file/d/1j1ucb9rjjwQRK9kAF1hbnNjocP1S6VwL/view?usp=sharing'
+    link: 'https://drive.google.com/file/d/1j1ucb9rjjwQRK9kAF1hbnNjocP1S6VwL/view?usp=sharing',
   },
-  { 
-    title: 'School of FutureTech (B.Tech CSE) Brochure', 
+  {
+    title: 'School of FutureTech (B.Tech CSE)',
     pages: 20,
-    link: 'https://drive.google.com/file/d/1IX6ex8j7WIURvM0nkEt5lHVQ8bwA-06U/view?usp=sharing'
+    link: 'https://drive.google.com/file/d/1IX6ex8j7WIURvM0nkEt5lHVQ8bwA-06U/view?usp=sharing',
   },
+];
+
+const channelStats = [
+  { icon: Video, label: 'Content Types', value: 'Podcasts · Reels · Ads · Interviews' },
+  { icon: Users, label: 'Team', value: 'Production Lead + Editor Team' },
+  { icon: Calendar, label: 'Volume', value: '~50 videos / month' },
+  { icon: YtIcon, label: 'Channel', value: 'School of FutureTech' },
 ];
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="py-24 px-6">
-      <div className="max-w-7xl mx-auto">
-        <motion.h2
+    <section id="portfolio" style={{ background: '#fff', padding: '96px 24px' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+
+        {/* Header */}
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-gray-900 mb-16 text-center"
+          style={{ marginBottom: 72 }}
         >
-          Portfolio
-        </motion.h2>
-        
-        {/* YouTube Channel Section */}
-        <div className="mb-24">
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-gray-900 mb-8"
-          >
-            YouTube Channel
-          </motion.h3>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Channel Embed */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="border-2 border-gray-900 rounded-2xl overflow-hidden hover:border-yellow-400 transition-all"
-            >
-              <div className="aspect-video">
-                <iframe
-                  src="https://www.youtube.com/embed/videoseries?list=PL2xv2fRx_g7PVeqUBkpraPvu22k7W_7DI"
-                  title="YouTube Channel"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
-              </div>
-            </motion.div>
+          <p style={{ color: '#888', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 16 }}>
+            Portfolio
+          </p>
+          <h2 style={{ fontSize: 'clamp(36px, 5.5vw, 64px)', fontWeight: 900, color: '#0A0A0A', lineHeight: 1, letterSpacing: '-0.02em' }}>
+            Work that
+            <br />
+            <span style={{ color: '#FFD60A' }}>speaks for itself.</span>
+          </h2>
+        </motion.div>
 
-            {/* Description */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-4"
-            >
-              <h4 className="text-2xl font-bold text-gray-900">
-                YouTube Growth & Production Manager
-              </h4>
-              <p className="text-gray-600 leading-relaxed">
-                Managed the School of FutureTech YouTube account, overseeing the production and publishing of diverse content formats including podcasts, interviews, reels, advertisements, and more. I handled end-to-end channel operations while leading and coordinating a team of video editors to ensure consistent quality, branding, and timely delivery across all content.
+        {/* ── YouTube Channel Card ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          style={{ marginBottom: 80 }}
+        >
+          <p style={{ color: '#888', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 12 }}>
+            YouTube Channel Management
+          </p>
+          <h3 style={{ fontSize: 28, fontWeight: 800, color: '#0A0A0A', marginBottom: 32, letterSpacing: '-0.01em' }}>
+            School of FutureTech
+          </h3>
+
+          <div
+            style={{
+              background: '#0A0A0A',
+              borderRadius: 24,
+              padding: '40px 40px',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: 40,
+              alignItems: 'center',
+            }}
+          >
+            {/* Left: channel identity */}
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 24 }}>
+                <div
+                  style={{
+                    width: 60,
+                    height: 60,
+                    borderRadius: 16,
+                    background: '#FF0000',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                  }}
+                >
+                  <YtIcon style={{ width: 28, height: 28, color: '#fff' }} />
+                </div>
+                <div>
+                  <p style={{ color: '#fff', fontWeight: 800, fontSize: 18, lineHeight: 1.2 }}>School of FutureTech</p>
+                  <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: 13, marginTop: 4 }}>
+                    Managed end-to-end channel operations
+                  </p>
+                </div>
+              </div>
+
+              <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 14, lineHeight: 1.75, marginBottom: 28 }}>
+                Led full YouTube production for School of FutureTech, managing a team of video editors, overseeing
+                content strategy, and driving output across formats including podcasts, short-form reels, brand ads,
+                and faculty interviews.
               </p>
+
               <motion.a
                 href="https://www.youtube.com/@schooloffuturetech"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-yellow-400 text-gray-900 font-semibold rounded-xl border-2 border-gray-900 hover:bg-yellow-500 transition-colors"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  padding: '12px 24px',
+                  background: '#FF0000',
+                  color: '#fff',
+                  fontWeight: 700,
+                  fontSize: 14,
+                  borderRadius: 999,
+                  textDecoration: 'none',
+                }}
               >
+                <Play style={{ width: 14, height: 14 }} />
                 Visit Channel
-                <ExternalLink className="w-5 h-5" />
               </motion.a>
-            </motion.div>
+            </div>
+
+            {/* Right: stat grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+              {channelStats.map(({ icon: Icon, label, value }) => (
+                <div
+                  key={label}
+                  style={{
+                    padding: '18px 16px',
+                    borderRadius: 14,
+                    background: 'rgba(255,255,255,0.04)',
+                    border: '1px solid rgba(255,255,255,0.07)',
+                  }}
+                >
+                  <Icon style={{ width: 16, height: 16, color: '#FFD60A', marginBottom: 10 }} />
+                  <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 6 }}>
+                    {label}
+                  </p>
+                  <p style={{ fontSize: 13, color: '#fff', fontWeight: 700, lineHeight: 1.4 }}>{value}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-        
-        {/* Photo Gallery */}
-        <div className="mb-24">
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-gray-900 mb-8"
+        </motion.div>
+
+        {/* ── Event Marketing ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          style={{ marginBottom: 80 }}
+        >
+          <p style={{ color: '#888', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 12 }}>
+            Event Marketing
+          </p>
+          <h3 style={{ fontSize: 28, fontWeight: 800, color: '#0A0A0A', marginBottom: 32, letterSpacing: '-0.01em' }}>
+            GenAI Hackathon
+          </h3>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: 32,
+              alignItems: 'start',
+            }}
           >
-            Photo Gallery
-          </motion.h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            {photos.map((photo, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, rotate: 2 }}
-                className="border-2 border-gray-900 rounded-2xl overflow-hidden aspect-square cursor-pointer transition-all hover:border-yellow-400"
+            <motion.a
+              href="https://drive.google.com/drive/folders/1f_GTMskf_hsuLIUnB52_e71Oj1Guq8F9?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.015 }}
+              style={{
+                display: 'block',
+                borderRadius: 20,
+                overflow: 'hidden',
+                border: '1px solid #E8E8E8',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
+                position: 'relative',
+              }}
+            >
+              <img
+                src={image_430c5960}
+                alt="GenAI Hackathon Event"
+                style={{ width: '100%', display: 'block', height: 200, objectFit: 'cover' }}
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  bottom: 12,
+                  right: 12,
+                  background: 'rgba(0,0,0,0.72)',
+                  color: '#fff',
+                  fontSize: 11,
+                  fontWeight: 600,
+                  padding: '4px 10px',
+                  borderRadius: 999,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 5,
+                  backdropFilter: 'blur(8px)',
+                }}
               >
-                {photo.type === 'instagram' ? (
-                  <iframe
-                    src={`https://www.instagram.com/${photo.username}/embed`}
-                    title={photo.username}
-                    className="w-full h-full"
-                    style={{ border: 'none' }}
-                    allowFullScreen
-                  />
-                ) : (
-                  <a href={photo.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
-                    <img
-                      src={photo.src}
-                      alt={photo.alt}
-                      className="w-full h-full object-cover"
-                    />
-                  </a>
-                )}
-              </motion.div>
-            ))}
+                <ExternalLink style={{ width: 11, height: 11 }} />
+                View Gallery
+              </div>
+            </motion.a>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+              <p style={{ color: '#444', fontSize: 15, lineHeight: 1.75 }}>
+                End-to-end event marketing execution, from awareness campaigns and registrations to on-ground
+                branding, communication, and post-event content. Managed the full marketing operation for a GenAI
+                hackathon hosted by LetsUpgrade.
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                {['Event Strategy', 'Email & WhatsApp Campaigns', 'On-Ground Branding', 'Post-Event Content'].map(tag => (
+                  <span
+                    key={tag}
+                    style={{
+                      fontSize: 12,
+                      fontWeight: 600,
+                      padding: '5px 14px',
+                      borderRadius: 999,
+                      background: '#F5F5F5',
+                      color: '#555',
+                      border: '1px solid #E8E8E8',
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-        
-        {/* Brochures */}
-        <div>
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-gray-900 mb-8"
+        </motion.div>
+
+        {/* ── Design & Print ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <p style={{ color: '#888', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 12 }}>
+            Design & Print
+          </p>
+          <h3 style={{ fontSize: 28, fontWeight: 800, color: '#0A0A0A', marginBottom: 8, letterSpacing: '-0.01em' }}>
+            Programme Brochures
+          </h3>
+          <p style={{ color: '#888', fontSize: 15, marginBottom: 32 }}>
+            Designed for ITM University admissions campaigns
+          </p>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              gap: 16,
+            }}
           >
-            Design Brochures
-          </motion.h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {brochures.map((brochure, index) => (
               <motion.a
                 key={index}
                 href={brochure.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -8, borderColor: '#facc15' }}
-                className="border-2 border-gray-900 rounded-2xl p-6 transition-all cursor-pointer bg-white group"
+                transition={{ delay: index * 0.08 }}
+                whileHover={{ y: -4 }}
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 16,
+                  padding: 24,
+                  borderRadius: 16,
+                  border: '1px solid #E8E8E8',
+                  background: '#fff',
+                  textDecoration: 'none',
+                  boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
+                  transition: 'border-color 0.2s, box-shadow 0.2s',
+                }}
+                onMouseEnter={e => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.borderColor = '#FFD60A';
+                  el.style.boxShadow = '0 8px 32px rgba(255,214,10,0.15)';
+                }}
+                onMouseLeave={e => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.borderColor = '#E8E8E8';
+                  el.style.boxShadow = '0 2px 12px rgba(0,0,0,0.04)';
+                }}
               >
-                <motion.div
-                  whileHover={{ rotate: 12 }}
-                  transition={{ duration: 0.3 }}
-                  className="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center mb-4"
+                <div
+                  style={{
+                    width: 48,
+                    height: 48,
+                    borderRadius: 12,
+                    background: '#FFFBEA',
+                    border: '1px solid rgba(255,214,10,0.3)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
                 >
-                  <FileText className="w-8 h-8 text-gray-900" />
-                </motion.div>
-                <h4 className="font-bold text-gray-900 mb-2">{brochure.title}</h4>
-                <p className="text-gray-600 text-sm mb-4">{brochure.pages} pages</p>
-                <motion.div
-                  whileHover={{ x: 4 }}
-                  className="flex items-center text-yellow-600 group-hover:text-yellow-500"
-                >
-                  <span className="text-sm font-semibold mr-1">View</span>
-                  <ExternalLink className="w-4 h-4" />
-                </motion.div>
+                  <FileText style={{ width: 22, height: 22, color: '#b8980a' }} />
+                </div>
+
+                <div style={{ flex: 1 }}>
+                  <h4 style={{ fontSize: 15, fontWeight: 700, color: '#0A0A0A', lineHeight: 1.4, marginBottom: 6 }}>
+                    {brochure.title}
+                  </h4>
+                  <p style={{ fontSize: 13, color: '#AAA' }}>{brochure.pages} pages</p>
+                </div>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 700, color: '#b8980a' }}>
+                  View PDF
+                  <ExternalLink style={{ width: 13, height: 13 }} />
+                </div>
               </motion.a>
             ))}
           </div>
-        </div>
+        </motion.div>
+
       </div>
     </section>
   );

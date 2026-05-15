@@ -47,7 +47,7 @@ export function FreelanceHero() {
               transition={{ delay: 0.2 }}
               className="text-white font-bold mb-4 text-lg underline"
             >
-              3.5+ Years of Work Experience
+              4+ Years of Work Experience
             </motion.p>
 
             <motion.h1

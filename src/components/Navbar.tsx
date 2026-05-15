@@ -1,34 +1,171 @@
-import { motion } from 'motion/react';
-import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'motion/react';
+import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
+
+const navLinks = [
+  { label: 'What I Do', id: 'what-i-do' },
+  { label: 'Experience', id: 'experience' },
+  { label: 'Freelance', id: 'freelance-work' },
+  { label: 'Portfolio', id: 'portfolio' },
+  { label: 'Contact', id: 'footer' },
+];
 
 export function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
+
+  useEffect(() => {
+    if (!isHome) return;
+
+    const allSections = [{ id: 'home' }, ...navLinks];
+    const observers: IntersectionObserver[] = [];
+
+    allSections.forEach(section => {
+      const el = document.getElementById(section.id);
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveSection(section.id); },
+        { rootMargin: '-40% 0px -40% 0px', threshold: 0 }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach(o => o.disconnect());
+  }, [isHome]);
+
+  const scrollTo = (id: string) => {
+    setMenuOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200"
+      className="fixed top-0 left-0 right-0 z-50"
+      style={{ background: 'rgba(10,10,10,0.92)', backdropFilter: 'blur(20px)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        {/* Logo */}
         <Link to="/">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-2xl font-semibold text-gray-900"
-          >
-            Sandeshy
+          <motion.div whileHover={{ scale: 1.04 }} style={{ color: '#fff', fontWeight: 800, fontSize: 18, letterSpacing: '-0.01em' }}>
+            sandeshy<span style={{ color: '#FFD60A' }}>.</span>
           </motion.div>
         </Link>
-        
-        <Link to="/freelance">
-          <motion.div
-            whileHover={{ scale: 1.05, borderColor: '#facc15' }}
-            whileTap={{ scale: 0.95 }}
-            className="px-6 py-2 border-2 border-gray-900 rounded-full transition-colors hover:bg-yellow-400 hover:border-yellow-400"
-          >
-            Freelance
-          </motion.div>
-        </Link>
+
+        {/* Desktop nav links */}
+        <div className="hidden md:flex items-center gap-7">
+          {isHome && navLinks.map(link => {
+            const isActive = activeSection === link.id;
+            return (
+              <button
+                key={link.id}
+                onClick={() => scrollTo(link.id)}
+                style={{
+                  fontSize: 13,
+                  fontWeight: isActive ? 700 : 400,
+                  color: isActive ? '#FFD60A' : 'rgba(255,255,255,0.5)',
+                  position: 'relative',
+                  padding: '4px 0',
+                  transition: 'color 0.2s',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={e => { if (!isActive) (e.currentTarget as HTMLElement).style.color = '#fff'; }}
+                onMouseLeave={e => { if (!isActive) (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.5)'; }}
+              >
+                {link.label}
+                {isActive && (
+                  <motion.div
+                    layoutId="nav-underline"
+                    style={{
+                      position: 'absolute',
+                      bottom: -2,
+                      left: 0,
+                      right: 0,
+                      height: 2,
+                      background: '#FFD60A',
+                      borderRadius: 2,
+                    }}
+                  />
+                )}
+              </button>
+            );
+          })}
+
+          <Link to="/freelance">
+            <motion.span
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+              style={{
+                display: 'inline-block',
+                padding: '8px 20px',
+                background: '#FFD60A',
+                color: '#000',
+                fontSize: 13,
+                fontWeight: 800,
+                borderRadius: 999,
+                cursor: 'pointer',
+                transition: 'background 0.2s',
+              }}
+              onMouseEnter={e => ((e.currentTarget as HTMLElement).style.background = '#FFE040')}
+              onMouseLeave={e => ((e.currentTarget as HTMLElement).style.background = '#FFD60A')}
+            >
+              Hire Me
+            </motion.span>
+          </Link>
+        </div>
+
+        {/* Mobile toggle */}
+        <button onClick={() => setMenuOpen(o => !o)} style={{ color: '#fff', padding: 8, background: 'none', border: 'none', cursor: 'pointer' }} className="md:hidden">
+          {menuOpen ? <X style={{ width: 22, height: 22 }} /> : <Menu style={{ width: 22, height: 22 }} />}
+        </button>
       </div>
+
+      {/* Mobile dropdown */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            style={{ background: '#0A0A0A', borderTop: '1px solid rgba(255,255,255,0.06)', overflow: 'hidden' }}
+            className="md:hidden"
+          >
+            <div style={{ padding: '20px 24px', display: 'flex', flexDirection: 'column', gap: 16 }}>
+              {isHome && navLinks.map(link => (
+                <button
+                  key={link.id}
+                  onClick={() => scrollTo(link.id)}
+                  style={{
+                    textAlign: 'left',
+                    fontSize: 16,
+                    fontWeight: activeSection === link.id ? 700 : 400,
+                    color: activeSection === link.id ? '#FFD60A' : 'rgba(255,255,255,0.65)',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    padding: '4px 0',
+                  }}
+                >
+                  {link.label}
+                </button>
+              ))}
+              <Link to="/freelance" onClick={() => setMenuOpen(false)}>
+                <div style={{ marginTop: 8, padding: '12px 0', background: '#FFD60A', color: '#000', fontWeight: 800, borderRadius: 999, textAlign: 'center', fontSize: 14 }}>
+                  Hire Me
+                </div>
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 }
