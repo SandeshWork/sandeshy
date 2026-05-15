@@ -103,29 +103,36 @@ export function Footer() {
             Whether it's a full-funnel campaign, a tracking setup, or a marketing system, I'm open to the right opportunity.
           </p>
 
-          <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} style={{ display: 'inline-block' }}>
-            <a
-              href="mailto:work@sandeshy.com"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 10,
-                padding: '16px 32px',
-                background: '#FFD60A',
-                color: '#000',
-                fontWeight: 800,
-                fontSize: 16,
-                borderRadius: 999,
-                textDecoration: 'none',
-                transition: 'background 0.2s',
-              }}
-              onMouseEnter={e => ((e.currentTarget as HTMLElement).style.background = '#FFE040')}
-              onMouseLeave={e => ((e.currentTarget as HTMLElement).style.background = '#FFD60A')}
-            >
-              work@sandeshy.com
-              <ArrowUpRight style={{ width: 18, height: 18 }} />
-            </a>
-          </motion.div>
+          <a
+            href="mailto:work@sandeshy.com"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 10,
+              padding: '16px 32px',
+              background: '#FFD60A',
+              color: '#000',
+              fontWeight: 800,
+              fontSize: 16,
+              borderRadius: 999,
+              textDecoration: 'none',
+              transition: 'background 0.2s, transform 0.15s',
+              cursor: 'pointer',
+            }}
+            onMouseEnter={e => {
+              const el = e.currentTarget as HTMLElement;
+              el.style.background = '#FFE040';
+              el.style.transform = 'scale(1.04)';
+            }}
+            onMouseLeave={e => {
+              const el = e.currentTarget as HTMLElement;
+              el.style.background = '#FFD60A';
+              el.style.transform = 'scale(1)';
+            }}
+          >
+            work@sandeshy.com
+            <ArrowUpRight style={{ width: 18, height: 18 }} />
+          </a>
         </motion.div>
 
         {/* Bottom row */}

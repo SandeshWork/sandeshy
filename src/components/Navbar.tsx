@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
+const HIRE_URL = 'https://www.hookhunters.com';
+
 const navLinks = [
   { label: 'What I Do', id: 'what-i-do' },
   { label: 'Experience', id: 'experience' },
@@ -99,7 +101,7 @@ export function Navbar() {
             );
           })}
 
-          <Link to="/freelance">
+          <a href={HIRE_URL} target="_blank" rel="noopener noreferrer">
             <motion.span
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
@@ -119,7 +121,7 @@ export function Navbar() {
             >
               Hire Me
             </motion.span>
-          </Link>
+          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -157,11 +159,11 @@ export function Navbar() {
                   {link.label}
                 </button>
               ))}
-              <Link to="/freelance" onClick={() => setMenuOpen(false)}>
+              <a href={HIRE_URL} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} style={{ textDecoration: 'none' }}>
                 <div style={{ marginTop: 8, padding: '12px 0', background: '#FFD60A', color: '#000', fontWeight: 800, borderRadius: 999, textAlign: 'center', fontSize: 14 }}>
                   Hire Me
                 </div>
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}

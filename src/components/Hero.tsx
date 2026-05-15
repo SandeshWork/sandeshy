@@ -64,7 +64,7 @@ export function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24 pb-20">
+      <div style={{ position: 'relative', zIndex: 10 }} className="max-w-7xl mx-auto px-6 w-full pt-24 pb-20">
         <div style={{ display: 'flex', alignItems: 'center', gap: 80 }}>
 
           {/* ── LEFT ── */}
@@ -163,34 +163,40 @@ export function Hero() {
                 />
               </motion.button>
 
-              <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
-                <a
-                  href="mailto:work@sandeshy.com"
-                  className="flex items-center gap-2 font-medium rounded-full"
-                  style={{
-                    padding: '14px 28px',
-                    color: 'rgba(255,255,255,0.65)',
-                    border: '1px solid rgba(255,255,255,0.15)',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s, border-color 0.2s, background 0.2s',
-                  }}
-                  onMouseEnter={e => {
-                    const el = e.currentTarget as HTMLElement;
-                    el.style.color = '#fff';
-                    el.style.borderColor = 'rgba(255,255,255,0.35)';
-                    el.style.background = 'rgba(255,255,255,0.05)';
-                  }}
-                  onMouseLeave={e => {
-                    const el = e.currentTarget as HTMLElement;
-                    el.style.color = 'rgba(255,255,255,0.65)';
-                    el.style.borderColor = 'rgba(255,255,255,0.15)';
-                    el.style.background = 'transparent';
-                  }}
-                >
-                  <Mail className="w-4 h-4" />
-                  work@sandeshy.com
-                </a>
-              </motion.div>
+              <a
+                href="mailto:work@sandeshy.com"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  padding: '14px 28px',
+                  color: 'rgba(255,255,255,0.65)',
+                  border: '1px solid rgba(255,255,255,0.15)',
+                  borderRadius: 999,
+                  textDecoration: 'none',
+                  fontSize: 14,
+                  fontWeight: 500,
+                  transition: 'color 0.2s, border-color 0.2s, background 0.2s, transform 0.15s',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={e => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.color = '#fff';
+                  el.style.borderColor = 'rgba(255,255,255,0.35)';
+                  el.style.background = 'rgba(255,255,255,0.05)';
+                  el.style.transform = 'scale(1.04)';
+                }}
+                onMouseLeave={e => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.color = 'rgba(255,255,255,0.65)';
+                  el.style.borderColor = 'rgba(255,255,255,0.15)';
+                  el.style.background = 'transparent';
+                  el.style.transform = 'scale(1)';
+                }}
+              >
+                <Mail className="w-4 h-4" />
+                work@sandeshy.com
+              </a>
             </motion.div>
 
             {/* Domain tags */}
