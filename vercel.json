@@ -4,6 +4,14 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "vite",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "sandeshy.com" }],
+      "destination": "https://www.sandeshy.com/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/:path*",
