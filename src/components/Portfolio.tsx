@@ -1,6 +1,47 @@
 import { motion } from 'motion/react';
-import { ExternalLink, FileText, Play, Users, Video, Calendar } from 'lucide-react';
+import { ExternalLink, FileText, Play, Users, Video, Calendar, TrendingUp } from 'lucide-react';
 import image_430c5960 from '../assets/430c5960ce08d40419be78ebd48afa5d8b803bd8.png';
+
+const freelanceCases = [
+  {
+    client: 'Bohotales',
+    url: 'https://www.bohotales.com',
+    industry: 'Mid-Premium Home Decor',
+    type: 'D2C · E-commerce',
+    platform: 'Meta Ads',
+    platformDetail: 'Facebook & Instagram',
+    timeline: 'Apr 2026 – Present',
+    roas: '2.3×',
+    roasLabel: 'ROAS in first 2 months',
+    context: 'Brought on as performance marketing consultant at brand launch with zero ad history, no audience, and no conversion data.',
+    highlights: [
+      'Built full Meta Ads funnel from scratch — campaign structure, creatives, and tracking',
+      'Tested lifestyle imagery, carousels, and video ads to identify winning formats',
+      'Set up Meta Pixel, conversion events, and lookalike audiences',
+    ],
+    tags: ['Meta Ads', 'Creative Testing', 'Audience Building', 'Conversion Tracking'],
+    accent: '#FF8C42',
+  },
+  {
+    client: 'Simira Diagnostics',
+    url: 'https://www.simiradiagnostics.com',
+    industry: 'Healthcare / Diagnostics',
+    type: 'B2C · Healthcare',
+    platform: 'Google Ads',
+    platformDetail: 'Search & Display',
+    timeline: 'Apr 2026 – Present',
+    roas: '2.8×',
+    roasLabel: 'ROAS via Google Ads',
+    context: 'Hired to set up and manage Google Ads campaigns driving qualified leads and appointment bookings through search and display channels.',
+    highlights: [
+      'Launched Search & Display campaigns targeting high-intent healthcare queries',
+      'Built tightly themed ad groups with compelling diagnostic-service copy',
+      'Set up conversion tracking (forms, calls, bookings) via GTM + GA4',
+    ],
+    tags: ['Google Ads', 'Keyword Research', 'GTM + GA4', 'Lead Generation'],
+    accent: '#3B82F6',
+  },
+];
 
 function YtIcon({ style }: { style?: React.CSSProperties }) {
   return (
@@ -248,6 +289,159 @@ export function Portfolio() {
                 ))}
               </div>
             </div>
+          </div>
+        </motion.div>
+
+        {/* ── Freelance Case Studies ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          style={{ marginBottom: 80 }}
+        >
+          <p style={{ color: '#888', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 12 }}>
+            Freelance Consulting
+          </p>
+          <h3 style={{ fontSize: 28, fontWeight: 800, color: '#0A0A0A', marginBottom: 8, letterSpacing: '-0.01em' }}>
+            Performance Marketing
+          </h3>
+          <p style={{ color: '#888', fontSize: 15, marginBottom: 32 }}>
+            Paid acquisition campaigns managed independently alongside full-time work
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 20 }}>
+            {freelanceCases.map((c, index) => (
+              <motion.div
+                key={c.client}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                style={{
+                  background: '#0A0A0A',
+                  borderRadius: 20,
+                  padding: 28,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 20,
+                  border: '1px solid rgba(255,255,255,0.07)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                }}
+              >
+                {/* top accent line */}
+                <div style={{
+                  position: 'absolute', top: 0, left: 0, right: 0, height: 3,
+                  background: `linear-gradient(90deg, ${c.accent}, transparent)`,
+                  borderRadius: '20px 20px 0 0',
+                }} />
+
+                {/* Header row */}
+                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12 }}>
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+                      <span style={{
+                        fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase',
+                        padding: '3px 8px', borderRadius: 999,
+                        background: 'rgba(255,214,10,0.1)', color: '#FFD60A',
+                        border: '1px solid rgba(255,214,10,0.2)',
+                      }}>
+                        Freelance
+                      </span>
+                      <span style={{
+                        fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+                        padding: '3px 8px', borderRadius: 999,
+                        background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.45)',
+                        border: '1px solid rgba(255,255,255,0.08)',
+                      }}>
+                        {c.platform}
+                      </span>
+                    </div>
+                    <h4 style={{ fontSize: 20, fontWeight: 800, color: '#fff', letterSpacing: '-0.01em' }}>
+                      {c.client}
+                    </h4>
+                    <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)', marginTop: 2 }}>{c.type} · {c.timeline}</p>
+                  </div>
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      width: 34, height: 34, borderRadius: '50%', flexShrink: 0,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      border: '1px solid rgba(255,255,255,0.12)',
+                      background: 'rgba(255,255,255,0.05)',
+                      color: 'rgba(255,255,255,0.45)',
+                      textDecoration: 'none', transition: 'all 0.2s',
+                    }}
+                    onMouseEnter={e => {
+                      const el = e.currentTarget as HTMLElement;
+                      el.style.background = '#FFD60A';
+                      el.style.borderColor = '#FFD60A';
+                      el.style.color = '#000';
+                    }}
+                    onMouseLeave={e => {
+                      const el = e.currentTarget as HTMLElement;
+                      el.style.background = 'rgba(255,255,255,0.05)';
+                      el.style.borderColor = 'rgba(255,255,255,0.12)';
+                      el.style.color = 'rgba(255,255,255,0.45)';
+                    }}
+                  >
+                    <ExternalLink style={{ width: 14, height: 14 }} />
+                  </a>
+                </div>
+
+                {/* ROAS stat */}
+                <div style={{
+                  padding: '16px 20px', borderRadius: 14,
+                  background: 'rgba(255,214,10,0.06)',
+                  border: '1px solid rgba(255,214,10,0.15)',
+                  display: 'flex', alignItems: 'center', gap: 14,
+                }}>
+                  <TrendingUp style={{ width: 20, height: 20, color: '#FFD60A', flexShrink: 0 }} />
+                  <div>
+                    <p style={{ fontSize: 28, fontWeight: 900, color: '#FFD60A', lineHeight: 1, letterSpacing: '-0.02em' }}>
+                      {c.roas}
+                    </p>
+                    <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', marginTop: 3, fontWeight: 600 }}>
+                      {c.roasLabel}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Context */}
+                <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.7 }}>
+                  {c.context}
+                </p>
+
+                {/* Highlights */}
+                <ul style={{ display: 'flex', flexDirection: 'column', gap: 8, listStyle: 'none', padding: 0, margin: 0 }}>
+                  {c.highlights.map((h, i) => (
+                    <li key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                      <span style={{
+                        width: 5, height: 5, borderRadius: '50%', marginTop: 7, flexShrink: 0,
+                        background: c.accent,
+                      }} />
+                      <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Tags */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                  {c.tags.map(tag => (
+                    <span key={tag} style={{
+                      fontSize: 11, fontWeight: 600, padding: '4px 10px', borderRadius: 8,
+                      background: 'rgba(255,255,255,0.05)',
+                      border: '1px solid rgba(255,255,255,0.07)',
+                      color: 'rgba(255,255,255,0.4)',
+                    }}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
 
