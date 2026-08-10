@@ -105,7 +105,9 @@ export function Footer() {
 
           <div className="flex gap-4 flex-wrap" style={{ alignItems: 'center' }}>
             <a
-              href="mailto:work@sandeshy.com"
+              href="mailto:hireme@sandeshy.com"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -131,12 +133,14 @@ export function Footer() {
                 el.style.transform = 'scale(1)';
               }}
             >
-              work@sandeshy.com
+              hireme@sandeshy.com
               <ArrowUpRight style={{ width: 18, height: 18 }} />
             </a>
 
             <a
-              href="mailto:work@sandeshy.com?subject=Resume%20request"
+              href="https://drive.google.com/uc?export=download&id=10hsISQ3Jo0dk6JZStQVcGKKfjGrXMbF5"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -161,7 +165,7 @@ export function Footer() {
                 el.style.borderColor = 'rgba(255,255,255,0.15)';
               }}
             >
-              Request Resume
+              Download Resume
             </a>
           </div>
         </motion.div>

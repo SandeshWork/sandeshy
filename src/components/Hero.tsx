@@ -163,7 +163,9 @@ export function Hero() {
               </motion.button>
 
               <a
-                href="mailto:work@sandeshy.com"
+                href="mailto:hireme@sandeshy.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -194,7 +196,7 @@ export function Hero() {
                 }}
               >
                 <Mail className="w-4 h-4" />
-                work@sandeshy.com
+                hireme@sandeshy.com
               </a>
             </motion.div>
 
