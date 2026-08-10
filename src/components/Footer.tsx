@@ -105,7 +105,7 @@ export function Footer() {
 
           <div className="flex gap-4 flex-wrap" style={{ alignItems: 'center' }}>
             <a
-              href="mailto:hireme@sandeshy.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=hireme@sandeshy.com"
               target="_blank"
               rel="noopener noreferrer"
               style={{

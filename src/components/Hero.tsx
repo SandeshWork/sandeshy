@@ -163,7 +163,7 @@ export function Hero() {
               </motion.button>
 
               <a
-                href="mailto:hireme@sandeshy.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=hireme@sandeshy.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
