@@ -5,9 +5,9 @@ import { HeroIllustration } from './HeroIllustration';
 
 const roles = [
   'Performance Marketer',
+  'Marketing Systems Builder',
+  'AI Agent Builder',
   'Paid Ads Specialist',
-  'Growth Strategist',
-  'Marketing Automation Expert',
 ];
 
 export function Hero() {
@@ -139,8 +139,8 @@ export function Hero() {
               className="text-lg leading-relaxed max-w-lg"
               style={{ color: 'rgba(255,255,255,0.45)' }}
             >
-              4+ years building growth systems for EdTech and SaaS brands.
-              Paid media, data, automation, and creative. I own the full funnel.
+              4+ years running paid media for EdTech, SaaS, D2C and BPO hiring brands.
+              I build the systems underneath it too: tracking, lead routing, WhatsApp flows, dashboards and AI agents that read the data and report on it.
             </motion.p>
 
             {/* CTAs */}

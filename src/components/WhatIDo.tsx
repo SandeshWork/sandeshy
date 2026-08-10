@@ -5,31 +5,45 @@ import { Plus, Minus } from 'lucide-react';
 const capabilities = [
   {
     number: '01',
-    title: 'Performance Marketing',
+    title: 'AI Marketing Agents',
     description:
-      'Full-funnel paid campaigns across Google, Meta, and LinkedIn. I handle audience research, ad copy, bid strategy, and budget allocation, focused on minimising cost per lead while maximising quality and revenue output.',
-    tools: ['Google Ads', 'Meta Ads', 'LinkedIn Ads', 'Reddit Ads'],
+      'Claude API agents that read campaign data and write the analysis. I design the prompts and set up delivery, so the daily summary lands in Slack or WhatsApp instead of sitting in a dashboard nobody opens.',
+    tools: ['Claude API', 'Prompt Design', 'Slack', 'WhatsApp Delivery'],
   },
   {
     number: '02',
-    title: 'Analytics & Tracking',
+    title: 'Paid Media',
     description:
-      'GA4 setup, GTM configuration, custom event tracking, and Looker Studio dashboards. I build the measurement layer that reveals what\'s actually driving results, so you know exactly where to invest and what to cut.',
-    tools: ['Google Analytics 4', 'Google Tag Manager', 'Looker Studio', 'Meta Pixel', 'MongoDB Charts'],
+      'Full-funnel campaigns across Meta, Google, LinkedIn, and Reddit. B2C and B2B, D2C and lead gen. I run the ads, the audience testing, and the budget calls that decide what scales and what gets cut.',
+    tools: ['Meta Ads', 'Google Ads', 'LinkedIn Ads', 'Reddit Ads'],
   },
   {
     number: '03',
+    title: 'Automation & Integration',
+    description:
+      'API to API lead routing instead of paid integration platforms, WhatsApp Business API flows, and scripts that move data between tools without manual work in between.',
+    tools: ['Google Apps Script', 'API Lead Routing', 'n8n', 'Make.com', 'WhatsApp Business API', 'Python'],
+  },
+  {
+    number: '04',
+    title: 'Analytics & Tracking',
+    description:
+      'GA4 setup, GTM configuration, and conversion tracking, feeding into Looker Studio and automated reporting pipelines. I build the measurement layer once, then it keeps reporting on its own.',
+    tools: ['Google Analytics 4', 'Google Tag Manager', 'Conversion Tracking', 'Looker Studio', 'Automated Dashboards'],
+  },
+  {
+    number: '05',
+    title: 'Technical',
+    description:
+      'Python for scripts and data pulls, HTML and CSS for landing pages, and Excel or Sheets automation for anything that does not need a full build.',
+    tools: ['Python', 'HTML & CSS', 'Excel & Sheets Automation'],
+  },
+  {
+    number: '06',
     title: 'Creative Direction',
     description:
       'Ad copy, landing pages, video scripts, and brochure design. I\'ve led 50+ video/month production pipelines and written high-converting copy across EdTech, SaaS, and D2C brands, always tied to a campaign objective.',
     tools: ['Adobe Premiere Pro', 'After Effects', 'Photoshop', 'Canva', 'Figma'],
-  },
-  {
-    number: '04',
-    title: 'Automation & CRM',
-    description:
-      'WhatsApp workflows, lead routing, automated reporting, and CRM integration. I use n8n, Make.com, and Zapier to eliminate manual overhead and build marketing operations that scale without scaling the team.',
-    tools: ['n8n', 'Make.com', 'Zapier', 'Customer.io', 'LeadSquared', 'Meritto'],
   },
 ];
 

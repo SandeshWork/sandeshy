@@ -7,11 +7,11 @@ const projects = [
     name: 'Boho Tales',
     url: 'https://www.bohotales.com',
     displayUrl: 'bohotales.com',
-    sector: 'D2C · E-commerce',
-    focus: 'Brand Building',
+    sector: 'D2C · Home Decor',
+    focus: 'Meta Ads & Shopify CRO',
     description:
-      'Managing social media and paid advertising to establish Boho Tales as a recognisable brand in the D2C space. The work spans creative strategy, audience building, and campaign execution, focused on building a consistent identity that converts.',
-    tags: ['Social Media', 'Paid Ads', 'Creative Direction', 'Brand Strategy'],
+      'Running Meta Ads and Shopify CRO at 2.5 ROAS. Built a reporting automation that pulls daily data from GA4, Shopify, and the ad platforms at product level, so the full funnel is visible in one place, from spend and traffic to product level revenue.',
+    tags: ['Meta Ads', 'Shopify CRO', 'Reporting Automation', 'GA4'],
     accent: '#FF8C42',
   },
   {
@@ -22,8 +22,8 @@ const projects = [
     sector: 'B2C · Healthcare',
     focus: 'Lead Generation',
     description:
-      'Driving patient inquiries through targeted digital campaigns. The sole focus here is consistent, high-quality lead generation, optimising every step of the funnel from ad to appointment inquiry.',
-    tags: ['Paid Search & Social', 'Funnel Optimisation', 'Conversion Tracking', 'Landing Pages'],
+      'Running Google Ads, Meta Ads, and LinkedIn Ads to drive patient inquiries. Monthly performance reporting covers cost per lead and volume across all three channels.',
+    tags: ['Google Ads', 'Meta Ads', 'LinkedIn Ads', 'Performance Reporting'],
     accent: '#3B82F6',
   },
   {

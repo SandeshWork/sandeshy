@@ -9,13 +9,13 @@ const getToolIcon = (name: string) => {
   if (name.includes('Analytics') || name.includes('Tag Manager') || name.includes('Looker') || name.includes('Charts'))
     return <BarChart3 className="w-4 h-4" />;
   if (name.includes('Excel') || name.includes('Sheets')) return <LineChart className="w-4 h-4" />;
-  if (name.includes('Zapier') || name.includes('n8n') || name.includes('Make.com')) return <Zap className="w-4 h-4" />;
+  if (name.includes('Zapier') || name.includes('n8n') || name.includes('Make.com') || name.includes('Apps Script')) return <Zap className="w-4 h-4" />;
   if (name.includes('Customer') || name.includes('Meritto') || name.includes('LeadSquared')) return <Workflow className="w-4 h-4" />;
-  if (name.includes('Tick') || name.includes('Wati') || name.includes('Sensy') || name.includes('Engati'))
+  if (name.includes('Tick') || name.includes('Wati') || name.includes('Sensy') || name.includes('Engati') || name.includes('WhatsApp') || name.includes('Slack'))
     return <MessageSquare className="w-4 h-4" />;
   if (name.includes('Sendy') || name.includes('Mailchimp')) return <Mail className="w-4 h-4" />;
   if (name.includes('Adobe') || name.includes('Canva') || name.includes('Figma')) return <Palette className="w-4 h-4" />;
-  if (name.includes('ChatGPT') || name.includes('Midjourney') || name.includes('Runway') || name.includes('HeyGen') || name.includes('ElevenLabs') || name.includes('Descript'))
+  if (name.includes('ChatGPT') || name.includes('Claude') || name.includes('Midjourney') || name.includes('Runway') || name.includes('HeyGen') || name.includes('ElevenLabs') || name.includes('Descript'))
     return <Sparkles className="w-4 h-4" />;
   return <Target className="w-4 h-4" />;
 };
@@ -54,6 +54,11 @@ const tools = [
   { name: 'HeyGen', category: 'AI' },
   { name: 'ElevenLabs', category: 'AI' },
   { name: 'Descript', category: 'AI' },
+  { name: 'Claude API', category: 'AI' },
+  { name: 'WhatsApp Business API', category: 'Comms' },
+  { name: 'Slack', category: 'Comms' },
+  { name: 'Google Apps Script', category: 'Automation' },
+  { name: 'Python', category: 'Technical' },
 ];
 
 const row1 = tools.slice(0, Math.ceil(tools.length / 2));
