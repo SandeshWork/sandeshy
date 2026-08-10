@@ -1281,6 +1281,16 @@ html {
   animation-play-state: paused;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-scroll-right, .animate-scroll-left {
+    animation: none;
+  }
+}
+
 @property --tw-space-y-reverse {
   syntax: "*";
   inherits: false;

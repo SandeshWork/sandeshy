@@ -16,7 +16,7 @@ const journeySteps = [
       'Designed the in office flow from ad click to data capture to screening to onboarding, defining who touches what at each step',
       'Built the WhatsApp hiring flow and currently optimising the message sequences for response rate and drop off at each stage',
       'Built an automation that produces a daily spend and candidate onboarding dashboard, covering every tracked variable with flow charts, trend lines, and stage level breakdowns',
-      'Running a Claude powered agent that reads the daily data, writes the analysis, and posts it to Slack, calling out what improved, what dropped, and what needs attention',
+      'Running a Claude powered agent that reads the daily data, writes the analysis, and posts it to Slack, calling out what improved, what dropped, and what needs attention, replacing a manual pull across two systems with one report every morning',
     ],
   },
   {
@@ -26,8 +26,8 @@ const journeySteps = [
     title: 'Head of Digital Marketing',
     isCurrent: false,
     achievements: [
-      'Ran monthly paid campaigns across Google Ads, Meta Ads, and LinkedIn with a significant monthly media budget',
-      'ITM B.Tech: Drove admissions generating substantial revenue in 2025 through performance-led campaigns',
+      'Ran monthly paid campaigns across Google Ads, Meta Ads, and LinkedIn for four active brands at once',
+      'ITM B.Tech: Ran the admissions campaign end to end across Google, Meta, and LinkedIn, from targeting to landing pages to conversion tracking',
       'LISA AI: Generated qualified B2B leads for an AI-based corporate training SaaS platform',
       'LetsUpgrade: Acquired users through a mix of paid and organic channels at scale',
       '12thClass: Drove thousands of student registrations for a 12th class resources platform',
@@ -46,10 +46,10 @@ const journeySteps = [
     title: 'Assistant Manager – Digital Marketing',
     isCurrent: false,
     achievements: [
-      'Took full ownership of paid campaigns and CRM automation for free and paid skilling programs',
-      'Reduced cost per lead significantly through audience testing, copy optimisation, and funnel improvements',
+      'Sole owner of paid campaigns and CRM automation, before the marketing team grew to seven',
+      'Lowered cost per lead through audience testing, copy optimisation, and funnel improvements',
       'Strengthened lead quality by aligning ad targeting, landing pages, and CRM journeys end-to-end',
-      'Grew Instagram following substantially using content and performance-led distribution strategies',
+      'Grew the Instagram following using content and performance-led distribution strategies',
       'Played a pivotal role in launching ITM B.Tech, delivering the lowest CPL across all verticals',
       'Collaborated closely with design and video teams to improve creative effectiveness and output',
     ],
@@ -136,6 +136,8 @@ export function CareerJourney() {
                 {/* Header row */}
                 <button
                   onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
+                  aria-expanded={expandedIndex === index}
+                  aria-controls={`experience-panel-${index}`}
                   style={{
                     width: '100%',
                     padding: '24px 28px',
@@ -224,6 +226,7 @@ export function CareerJourney() {
                 <AnimatePresence>
                   {expandedIndex === index && (
                     <motion.div
+                      id={`experience-panel-${index}`}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}

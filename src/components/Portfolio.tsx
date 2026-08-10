@@ -43,6 +43,15 @@ const freelanceCases = [
   },
 ];
 
+const alsoWorkedWith = [
+  {
+    name: 'CE Infrastructure',
+    url: 'https://www.ceinfrastructure.in',
+    displayUrl: 'ceinfrastructure.in',
+    description: 'LinkedIn growth and website build for a B2B infrastructure company.',
+  },
+];
+
 function YtIcon({ style }: { style?: React.CSSProperties }) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" style={style}>
@@ -86,10 +95,10 @@ export function Portfolio() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          style={{ marginBottom: 72 }}
+          style={{ marginBottom: 56 }}
         >
           <p style={{ color: '#888', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 16 }}>
-            Portfolio
+            Case Studies
           </p>
           <h2 style={{ fontSize: 'clamp(36px, 5.5vw, 64px)', fontWeight: 900, color: '#0A0A0A', lineHeight: 1, letterSpacing: '-0.02em' }}>
             Work that
@@ -98,215 +107,15 @@ export function Portfolio() {
           </h2>
         </motion.div>
 
-        {/* ── YouTube Channel Card ── */}
+        {/* ── Case Studies ── */}
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          style={{ marginBottom: 80 }}
+          style={{ marginBottom: 24 }}
         >
-          <p style={{ color: '#888', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 12 }}>
-            YouTube Channel Management
-          </p>
-          <h3 style={{ fontSize: 28, fontWeight: 800, color: '#0A0A0A', marginBottom: 32, letterSpacing: '-0.01em' }}>
-            School of FutureTech
-          </h3>
-
-          <div
-            style={{
-              background: '#0A0A0A',
-              borderRadius: 24,
-              padding: '40px 40px',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: 40,
-              alignItems: 'center',
-            }}
-          >
-            {/* Left: channel identity */}
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 24 }}>
-                <div
-                  style={{
-                    width: 60,
-                    height: 60,
-                    borderRadius: 16,
-                    background: '#FF0000',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                  }}
-                >
-                  <YtIcon style={{ width: 28, height: 28, color: '#fff' }} />
-                </div>
-                <div>
-                  <p style={{ color: '#fff', fontWeight: 800, fontSize: 18, lineHeight: 1.2 }}>School of FutureTech</p>
-                  <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: 13, marginTop: 4 }}>
-                    Managed end-to-end channel operations
-                  </p>
-                </div>
-              </div>
-
-              <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 14, lineHeight: 1.75, marginBottom: 28 }}>
-                Led full YouTube production for School of FutureTech, managing a team of video editors, overseeing
-                content strategy, and driving output across formats including podcasts, short-form reels, brand ads,
-                and faculty interviews.
-              </p>
-
-              <motion.a
-                href="https://www.youtube.com/@schooloffuturetech"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  padding: '12px 24px',
-                  background: '#FF0000',
-                  color: '#fff',
-                  fontWeight: 700,
-                  fontSize: 14,
-                  borderRadius: 999,
-                  textDecoration: 'none',
-                }}
-              >
-                <Play style={{ width: 14, height: 14 }} />
-                Visit Channel
-              </motion.a>
-            </div>
-
-            {/* Right: stat grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-              {channelStats.map(({ icon: Icon, label, value }) => (
-                <div
-                  key={label}
-                  style={{
-                    padding: '18px 16px',
-                    borderRadius: 14,
-                    background: 'rgba(255,255,255,0.04)',
-                    border: '1px solid rgba(255,255,255,0.07)',
-                  }}
-                >
-                  <Icon style={{ width: 16, height: 16, color: '#FFD60A', marginBottom: 10 }} />
-                  <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 6 }}>
-                    {label}
-                  </p>
-                  <p style={{ fontSize: 13, color: '#fff', fontWeight: 700, lineHeight: 1.4 }}>{value}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
-        {/* ── Event Marketing ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          style={{ marginBottom: 80 }}
-        >
-          <p style={{ color: '#888', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 12 }}>
-            Event Marketing
-          </p>
-          <h3 style={{ fontSize: 28, fontWeight: 800, color: '#0A0A0A', marginBottom: 32, letterSpacing: '-0.01em' }}>
-            GenAI Hackathon
-          </h3>
-
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: 32,
-              alignItems: 'start',
-            }}
-          >
-            <motion.a
-              href="https://drive.google.com/drive/folders/1f_GTMskf_hsuLIUnB52_e71Oj1Guq8F9?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.015 }}
-              style={{
-                display: 'block',
-                borderRadius: 20,
-                overflow: 'hidden',
-                border: '1px solid #E8E8E8',
-                boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
-                position: 'relative',
-              }}
-            >
-              <img
-                src={image_430c5960}
-                alt="GenAI Hackathon Event"
-                style={{ width: '100%', display: 'block', height: 200, objectFit: 'cover' }}
-              />
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: 12,
-                  right: 12,
-                  background: 'rgba(0,0,0,0.72)',
-                  color: '#fff',
-                  fontSize: 11,
-                  fontWeight: 600,
-                  padding: '4px 10px',
-                  borderRadius: 999,
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 5,
-                  backdropFilter: 'blur(8px)',
-                }}
-              >
-                <ExternalLink style={{ width: 11, height: 11 }} />
-                View Gallery
-              </div>
-            </motion.a>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-              <p style={{ color: '#444', fontSize: 15, lineHeight: 1.75 }}>
-                End-to-end event marketing execution, from awareness campaigns and registrations to on-ground
-                branding, communication, and post-event content. Managed the full marketing operation for a GenAI
-                hackathon hosted by LetsUpgrade.
-              </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                {['Event Strategy', 'Email & WhatsApp Campaigns', 'On-Ground Branding', 'Post-Event Content'].map(tag => (
-                  <span
-                    key={tag}
-                    style={{
-                      fontSize: 12,
-                      fontWeight: 600,
-                      padding: '5px 14px',
-                      borderRadius: 999,
-                      background: '#F5F5F5',
-                      color: '#555',
-                      border: '1px solid #E8E8E8',
-                    }}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* ── Freelance Case Studies ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          style={{ marginBottom: 80 }}
-        >
-          <p style={{ color: '#888', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 12 }}>
-            Freelance Consulting
-          </p>
-          <h3 style={{ fontSize: 28, fontWeight: 800, color: '#0A0A0A', marginBottom: 8, letterSpacing: '-0.01em' }}>
-            Performance Marketing
-          </h3>
-          <p style={{ color: '#888', fontSize: 15, marginBottom: 32 }}>
-            Paid acquisition campaigns managed independently alongside full-time work
+          <p style={{ color: '#888', fontSize: 15, marginBottom: 32, maxWidth: 560 }}>
+            Paid media accounts I run independently through HookHunters Digital, alongside full-time work at Mopid.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 20 }}>
@@ -351,7 +160,7 @@ export function Portfolio() {
                       <span style={{
                         fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
                         padding: '3px 8px', borderRadius: 999,
-                        background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.45)',
+                        background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.55)',
                         border: '1px solid rgba(255,255,255,0.08)',
                       }}>
                         {c.platform}
@@ -360,18 +169,19 @@ export function Portfolio() {
                     <h4 style={{ fontSize: 20, fontWeight: 800, color: '#fff', letterSpacing: '-0.01em' }}>
                       {c.client}
                     </h4>
-                    <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)', marginTop: 2 }}>{c.type} · {c.timeline}</p>
+                    <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', marginTop: 2 }}>{c.type} · {c.timeline}</p>
                   </div>
                   <a
                     href={c.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Visit ${c.client} website`}
                     style={{
                       width: 34, height: 34, borderRadius: '50%', flexShrink: 0,
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       border: '1px solid rgba(255,255,255,0.12)',
                       background: 'rgba(255,255,255,0.05)',
-                      color: 'rgba(255,255,255,0.45)',
+                      color: 'rgba(255,255,255,0.55)',
                       textDecoration: 'none', transition: 'all 0.2s',
                     }}
                     onMouseEnter={e => {
@@ -384,7 +194,7 @@ export function Portfolio() {
                       const el = e.currentTarget as HTMLElement;
                       el.style.background = 'rgba(255,255,255,0.05)';
                       el.style.borderColor = 'rgba(255,255,255,0.12)';
-                      el.style.color = 'rgba(255,255,255,0.45)';
+                      el.style.color = 'rgba(255,255,255,0.55)';
                     }}
                   >
                     <ExternalLink style={{ width: 14, height: 14 }} />
@@ -403,14 +213,14 @@ export function Portfolio() {
                     <p style={{ fontSize: 28, fontWeight: 900, color: '#FFD60A', lineHeight: 1, letterSpacing: '-0.02em' }}>
                       {c.roas}
                     </p>
-                    <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', marginTop: 3, fontWeight: 600 }}>
+                    <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', marginTop: 3, fontWeight: 600 }}>
                       {c.roasLabel}
                     </p>
                   </div>
                 </div>
 
                 {/* Context */}
-                <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.7 }}>
+                <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.7 }}>
                   {c.context}
                 </p>
 
@@ -422,7 +232,7 @@ export function Portfolio() {
                         width: 5, height: 5, borderRadius: '50%', marginTop: 7, flexShrink: 0,
                         background: c.accent,
                       }} />
-                      <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>{h}</span>
+                      <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>{h}</span>
                     </li>
                   ))}
                 </ul>
@@ -434,7 +244,7 @@ export function Portfolio() {
                       fontSize: 11, fontWeight: 600, padding: '4px 10px', borderRadius: 8,
                       background: 'rgba(255,255,255,0.05)',
                       border: '1px solid rgba(255,255,255,0.07)',
-                      color: 'rgba(255,255,255,0.4)',
+                      color: 'rgba(255,255,255,0.5)',
                     }}>
                       {tag}
                     </span>
@@ -445,91 +255,124 @@ export function Portfolio() {
           </div>
         </motion.div>
 
-        {/* ── Design & Print ── */}
+        {/* ── Also worked with ── */}
         <motion.div
-          initial={{ opacity: 0, y: 32 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          style={{ marginBottom: 88, paddingTop: 8 }}
+        >
+          <p style={{ fontSize: 12, color: '#AAA', display: 'flex', flexWrap: 'wrap', gap: '6px 10px', alignItems: 'center' }}>
+            <span style={{ fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#999' }}>Also worked with:</span>
+            {alsoWorkedWith.map((p, i) => (
+              <span key={p.name}>
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#666', textDecoration: 'underline', textUnderlineOffset: 3 }}
+                >
+                  {p.name}
+                </a>
+                {' — '}{p.description}
+                {i < alsoWorkedWith.length - 1 ? ',' : ''}
+              </span>
+            ))}
+          </p>
+        </motion.div>
+
+        {/* ── Also Built ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          style={{ paddingTop: 40, borderTop: '1px solid #EEE' }}
         >
-          <p style={{ color: '#888', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 12 }}>
-            Design & Print
-          </p>
-          <h3 style={{ fontSize: 28, fontWeight: 800, color: '#0A0A0A', marginBottom: 8, letterSpacing: '-0.01em' }}>
-            Programme Brochures
-          </h3>
-          <p style={{ color: '#888', fontSize: 15, marginBottom: 32 }}>
-            Designed for ITM University admissions campaigns
+          <p style={{ color: '#AAA', fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 28 }}>
+            Also Built — Creative &amp; Event Production
           </p>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-              gap: 16,
-            }}
-          >
-            {brochures.map((brochure, index) => (
-              <motion.a
-                key={index}
-                href={brochure.link}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24, marginBottom: 40 }}>
+            {/* YouTube channel, condensed */}
+            <div style={{ background: '#FAFAFA', borderRadius: 16, padding: 22, border: '1px solid #EEE' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+                <div style={{ width: 32, height: 32, borderRadius: 8, background: '#FF0000', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <YtIcon style={{ width: 15, height: 15, color: '#fff' }} />
+                </div>
+                <p style={{ fontWeight: 700, fontSize: 14, color: '#0A0A0A' }}>School of FutureTech — YouTube</p>
+              </div>
+              <p style={{ fontSize: 13, color: '#777', lineHeight: 1.6, marginBottom: 14 }}>
+                Led full channel production: podcasts, reels, ads, and faculty interviews, ~50 videos/month with a production lead and editor team.
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 14, fontSize: 11, color: '#999' }}>
+                {channelStats.slice(0, 2).map(({ label, value }) => (
+                  <span key={label}>{label}: <b style={{ color: '#555' }}>{value}</b></span>
+                ))}
+              </div>
+              <a
+                href="https://www.youtube.com/@schooloffuturetech"
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
-                whileHover={{ y: -4 }}
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 16,
-                  padding: 24,
-                  borderRadius: 16,
-                  border: '1px solid #E8E8E8',
-                  background: '#fff',
-                  textDecoration: 'none',
-                  boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
-                  transition: 'border-color 0.2s, box-shadow 0.2s',
-                }}
-                onMouseEnter={e => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = '#FFD60A';
-                  el.style.boxShadow = '0 8px 32px rgba(255,214,10,0.15)';
-                }}
-                onMouseLeave={e => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = '#E8E8E8';
-                  el.style.boxShadow = '0 2px 12px rgba(0,0,0,0.04)';
-                }}
+                style={{ fontSize: 12, fontWeight: 700, color: '#b8980a', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 5 }}
               >
-                <div
+                <Play style={{ width: 11, height: 11 }} />
+                Visit Channel
+              </a>
+            </div>
+
+            {/* GenAI hackathon, condensed */}
+            <div style={{ background: '#FAFAFA', borderRadius: 16, padding: 22, border: '1px solid #EEE' }}>
+              <div style={{ display: 'flex', gap: 14, marginBottom: 12 }}>
+                <img
+                  src={image_430c5960}
+                  alt="GenAI Hackathon Event"
+                  style={{ width: 64, height: 64, borderRadius: 10, objectFit: 'cover', flexShrink: 0 }}
+                />
+                <div>
+                  <p style={{ fontWeight: 700, fontSize: 14, color: '#0A0A0A', marginBottom: 4 }}>GenAI Hackathon — Event Marketing</p>
+                  <p style={{ fontSize: 12, color: '#999' }}>Hosted by LetsUpgrade</p>
+                </div>
+              </div>
+              <p style={{ fontSize: 13, color: '#777', lineHeight: 1.6, marginBottom: 14 }}>
+                End-to-end event marketing: awareness, registrations, on-ground branding, and post-event content.
+              </p>
+              <a
+                href="https://drive.google.com/drive/folders/1f_GTMskf_hsuLIUnB52_e71Oj1Guq8F9?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ fontSize: 12, fontWeight: 700, color: '#b8980a', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 5 }}
+              >
+                <ExternalLink style={{ width: 11, height: 11 }} />
+                View Gallery
+              </a>
+            </div>
+          </div>
+
+          {/* Brochures, condensed row */}
+          <div>
+            <p style={{ fontSize: 12, color: '#999', marginBottom: 14 }}>Programme brochures designed for ITM University admissions campaigns:</p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+              {brochures.map((brochure, index) => (
+                <a
+                  key={index}
+                  href={brochure.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
-                    width: 48,
-                    height: 48,
-                    borderRadius: 12,
-                    background: '#FFFBEA',
-                    border: '1px solid rgba(255,214,10,0.3)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    display: 'inline-flex', alignItems: 'center', gap: 8,
+                    padding: '9px 14px', borderRadius: 10, border: '1px solid #E8E8E8',
+                    background: '#fff', textDecoration: 'none', fontSize: 12.5, color: '#555', fontWeight: 600,
+                    transition: 'border-color 0.2s',
                   }}
+                  onMouseEnter={e => ((e.currentTarget as HTMLElement).style.borderColor = '#FFD60A')}
+                  onMouseLeave={e => ((e.currentTarget as HTMLElement).style.borderColor = '#E8E8E8')}
                 >
-                  <FileText style={{ width: 22, height: 22, color: '#b8980a' }} />
-                </div>
-
-                <div style={{ flex: 1 }}>
-                  <h4 style={{ fontSize: 15, fontWeight: 700, color: '#0A0A0A', lineHeight: 1.4, marginBottom: 6 }}>
-                    {brochure.title}
-                  </h4>
-                  <p style={{ fontSize: 13, color: '#AAA' }}>{brochure.pages} pages</p>
-                </div>
-
-                <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 700, color: '#b8980a' }}>
-                  View PDF
-                  <ExternalLink style={{ width: 13, height: 13 }} />
-                </div>
-              </motion.a>
-            ))}
+                  <FileText style={{ width: 13, height: 13, color: '#b8980a', flexShrink: 0 }} />
+                  {brochure.title}
+                  <span style={{ color: '#AAA', fontWeight: 400 }}>· {brochure.pages}p</span>
+                </a>
+              ))}
+            </div>
           </div>
         </motion.div>
 

@@ -7,9 +7,9 @@ const HIRE_URL = 'https://www.hookhunters.com';
 
 const navLinks = [
   { label: 'What I Do', id: 'what-i-do' },
+  { label: 'Agents', id: 'agents' },
   { label: 'Experience', id: 'experience' },
-  { label: 'Freelance', id: 'freelance-work' },
-  { label: 'Portfolio', id: 'portfolio' },
+  { label: 'Case Studies', id: 'portfolio' },
   { label: 'Contact', id: 'footer' },
 ];
 

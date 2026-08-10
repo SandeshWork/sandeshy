@@ -35,7 +35,7 @@ const capabilities = [
     number: '05',
     title: 'Technical',
     description:
-      'Python for scripts and data pulls, HTML and CSS for landing pages, and Excel or Sheets automation for anything that does not need a full build.',
+      'Python behind the reporting scripts that power the Mopid and Boho Tales dashboards, HTML and CSS for landing pages, and Excel or Sheets automation for anything that does not need a full build.',
     tools: ['Python', 'HTML & CSS', 'Excel & Sheets Automation'],
   },
   {
@@ -48,7 +48,7 @@ const capabilities = [
 ];
 
 export function WhatIDo() {
-  const [active, setActive] = useState<number | null>(null);
+  const [active, setActive] = useState<number | null>(0);
 
   return (
     <section id="what-i-do" style={{ background: '#fff', padding: '96px 24px' }}>
@@ -100,6 +100,8 @@ export function WhatIDo() {
             >
               <button
                 onClick={() => setActive(active === index ? null : index)}
+                aria-expanded={active === index}
+                aria-controls={`capability-panel-${index}`}
                 className="group"
                 style={{
                   width: '100%',
@@ -163,6 +165,7 @@ export function WhatIDo() {
               <AnimatePresence>
                 {active === index && (
                   <motion.div
+                    id={`capability-panel-${index}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}

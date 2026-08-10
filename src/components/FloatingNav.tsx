@@ -4,9 +4,9 @@ import { motion } from 'motion/react';
 const sections = [
   { id: 'home', label: 'Home' },
   { id: 'what-i-do', label: 'What I Do' },
+  { id: 'agents', label: 'Agents' },
   { id: 'experience', label: 'Experience' },
-  { id: 'freelance-work', label: 'Freelance' },
-  { id: 'portfolio', label: 'Portfolio' },
+  { id: 'portfolio', label: 'Case Studies' },
   { id: 'footer', label: 'Contact' },
 ];
 

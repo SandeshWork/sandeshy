@@ -1,23 +1,16 @@
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
 import { ArrowUpRight, Mail } from 'lucide-react';
 import { HeroIllustration } from './HeroIllustration';
 
-const roles = [
-  'Performance Marketer',
-  'Marketing Systems Builder',
-  'AI Agent Builder',
-  'Paid Ads Specialist',
+const proofStats = [
+  { value: '2.5×', label: 'ROAS at Boho Tales' },
+  { value: '3', label: 'AI agents in production' },
+  { value: '4+ yrs', label: 'EdTech to BPO hiring' },
 ];
 
 export function Hero() {
-  const [roleIndex, setRoleIndex] = useState(0);
   const [showRight, setShowRight] = useState(false);
-
-  useEffect(() => {
-    const t = setInterval(() => setRoleIndex(i => (i + 1) % roles.length), 2800);
-    return () => clearInterval(t);
-  }, []);
 
   useEffect(() => {
     const check = () => setShowRight(window.innerWidth >= 1024);
@@ -109,27 +102,15 @@ export function Hero() {
               </h1>
             </motion.div>
 
-            {/* Animated role */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+            {/* Positioning line */}
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45 }}
-              className="flex items-center gap-3"
-              style={{ height: 30 }}
+              style={{ color: 'rgba(255,255,255,0.65)', fontSize: 20, fontWeight: 500 }}
             >
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={roleIndex}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.3 }}
-                  style={{ color: 'rgba(255,255,255,0.55)', fontSize: 20, fontWeight: 500 }}
-                >
-                  {roles[roleIndex]}
-                </motion.span>
-              </AnimatePresence>
-            </motion.div>
+              Performance marketer who builds the systems and AI agents underneath the ads.
+            </motion.p>
 
             {/* Bio */}
             <motion.p
@@ -137,11 +118,29 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55 }}
               className="text-lg leading-relaxed max-w-lg"
-              style={{ color: 'rgba(255,255,255,0.45)' }}
+              style={{ color: 'rgba(255,255,255,0.6)' }}
             >
               4+ years running paid media for EdTech, SaaS, D2C and BPO hiring brands.
               I build the systems underneath it too: tracking, lead routing, WhatsApp flows, dashboards and AI agents that read the data and report on it.
             </motion.p>
+
+            {/* Proof strip */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-wrap"
+              style={{ gap: 28 }}
+            >
+              {proofStats.map(stat => (
+                <div key={stat.label}>
+                  <p style={{ color: '#FFD60A', fontSize: 26, fontWeight: 800, letterSpacing: '-0.01em', lineHeight: 1 }}>
+                    {stat.value}
+                  </p>
+                  <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: 12, marginTop: 4 }}>{stat.label}</p>
+                </div>
+              ))}
+            </motion.div>
 
             {/* CTAs */}
             <motion.div
@@ -157,7 +156,7 @@ export function Hero() {
                 className="group flex items-center gap-2 font-bold rounded-full"
                 style={{ padding: '14px 28px', background: '#FFD60A', color: '#000' }}
               >
-                View Portfolio
+                See the Case Studies
                 <ArrowUpRight
                   className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
@@ -206,7 +205,7 @@ export function Hero() {
               transition={{ delay: 0.85 }}
               className="flex gap-2 flex-wrap pt-2"
             >
-              {['EdTech', 'SaaS', 'D2C', 'B2B', 'E-commerce'].map(tag => (
+              {['Hiring / BPO', 'D2C', 'Healthcare', 'SaaS', 'EdTech'].map(tag => (
                 <span
                   key={tag}
                   className="text-xs rounded-full"

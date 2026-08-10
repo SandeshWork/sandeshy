@@ -86,14 +86,14 @@ export function Footer() {
               marginBottom: 32,
             }}
           >
-            Let's build
+            Want the media
             <br />
-            <span style={{ color: '#FFD60A' }}>something great.</span>
+            <span style={{ color: '#FFD60A' }}>and the systems, one hire?</span>
           </h2>
 
           <p
             style={{
-              color: 'rgba(255,255,255,0.4)',
+              color: 'rgba(255,255,255,0.55)',
               fontSize: 18,
               maxWidth: 480,
               lineHeight: 1.6,
@@ -103,36 +103,67 @@ export function Footer() {
             Whether it's a full-funnel campaign, a tracking setup, or a marketing system, I'm open to the right opportunity.
           </p>
 
-          <a
-            href="mailto:work@sandeshy.com"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 10,
-              padding: '16px 32px',
-              background: '#FFD60A',
-              color: '#000',
-              fontWeight: 800,
-              fontSize: 16,
-              borderRadius: 999,
-              textDecoration: 'none',
-              transition: 'background 0.2s, transform 0.15s',
-              cursor: 'pointer',
-            }}
-            onMouseEnter={e => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.background = '#FFE040';
-              el.style.transform = 'scale(1.04)';
-            }}
-            onMouseLeave={e => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.background = '#FFD60A';
-              el.style.transform = 'scale(1)';
-            }}
-          >
-            work@sandeshy.com
-            <ArrowUpRight style={{ width: 18, height: 18 }} />
-          </a>
+          <div className="flex gap-4 flex-wrap" style={{ alignItems: 'center' }}>
+            <a
+              href="mailto:work@sandeshy.com"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 10,
+                padding: '16px 32px',
+                background: '#FFD60A',
+                color: '#000',
+                fontWeight: 800,
+                fontSize: 16,
+                borderRadius: 999,
+                textDecoration: 'none',
+                transition: 'background 0.2s, transform 0.15s',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={e => {
+                const el = e.currentTarget as HTMLElement;
+                el.style.background = '#FFE040';
+                el.style.transform = 'scale(1.04)';
+              }}
+              onMouseLeave={e => {
+                const el = e.currentTarget as HTMLElement;
+                el.style.background = '#FFD60A';
+                el.style.transform = 'scale(1)';
+              }}
+            >
+              work@sandeshy.com
+              <ArrowUpRight style={{ width: 18, height: 18 }} />
+            </a>
+
+            <a
+              href="mailto:work@sandeshy.com?subject=Resume%20request"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                padding: '16px 24px',
+                color: 'rgba(255,255,255,0.65)',
+                border: '1px solid rgba(255,255,255,0.15)',
+                borderRadius: 999,
+                textDecoration: 'none',
+                fontSize: 14,
+                fontWeight: 600,
+                transition: 'color 0.2s, border-color 0.2s',
+              }}
+              onMouseEnter={e => {
+                const el = e.currentTarget as HTMLElement;
+                el.style.color = '#fff';
+                el.style.borderColor = 'rgba(255,255,255,0.35)';
+              }}
+              onMouseLeave={e => {
+                const el = e.currentTarget as HTMLElement;
+                el.style.color = 'rgba(255,255,255,0.65)';
+                el.style.borderColor = 'rgba(255,255,255,0.15)';
+              }}
+            >
+              Request Resume
+            </a>
+          </div>
         </motion.div>
 
         {/* Bottom row */}
